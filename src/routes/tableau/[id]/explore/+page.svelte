@@ -1,11 +1,7 @@
 <script lang="ts">
 	import type { PageData } from '../$types';
 	import Button from '../../../../components/Button.svelte';
-<<<<<<< Updated upstream
-	import { actualPaintingIndex } from '../../../../stores';
-=======
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
->>>>>>> Stashed changes
 
 	export let data: PageData;
 
