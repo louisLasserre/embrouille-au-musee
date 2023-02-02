@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { PageData } from '../$types';
 	import Button from '../../../../components/Button.svelte';
-	import { actualPaintingIndex, exploringMode } from '../../../../stores';
+	import { actualPaintingIndex } from '../../../../stores';
 
 	export let data: PageData;
 
-	$: PageId = Number(data.id);
+	let PageId = Number(data.id);
 
 	const { name, description } = data.tableau;
 
@@ -15,11 +15,8 @@
 	}
 	console.log({ $actualPaintingIndex }, { PageId });
 
-	if ($exploringMode === 'placeItems') {
-		url = `/tableau/${$actualPaintingIndex + 1}/explore`;
-	}
 	if (PageId === data.total) {
-		url = '/transition';
+		url = '/end';
 	}
 </script>
 
