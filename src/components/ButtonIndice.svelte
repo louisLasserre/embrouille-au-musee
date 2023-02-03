@@ -2,4 +2,4 @@
 </script>
 
 <button>Indice</button>
-<img src="~/static/icon-clue.png" alt="" class="w-64">
+<img src="/icons/icon-clue.png" alt="" class="w-64 h-10">

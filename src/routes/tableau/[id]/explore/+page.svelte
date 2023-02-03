@@ -57,7 +57,7 @@
 	{#each $items as item}
 		<button on:click={$exploringMode === 'placeItems' ? placeItems(item) : null}>objet {item}</button>
 	{/each}
-	<ButtonIndice></ButtonIndice>
+	<ButtonIndice />
 	<Button {url} disabled={disabled()} >Oeuvre suivante</Button>
 </div>
 
