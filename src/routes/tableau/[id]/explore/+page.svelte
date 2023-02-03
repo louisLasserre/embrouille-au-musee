@@ -2,12 +2,13 @@
 	import type { PageData } from '../$types';
 	import Button from '../../../../components/Button.svelte';
 	import ButtonIndice from 'src/components/ButtonIndice.svelte';
+	import Modal from 'src/components/Modal.svelte';
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
 	export let data: PageData;
 
 	let PageId = Number(data.id);
-
+	let isActive = false;
 	const { name, description, itemId } = data.tableau;
 
 	let url: string = '/find-painting';
@@ -57,8 +58,9 @@
 	{#each $items as item}
 		<button on:click={$exploringMode === 'placeItems' ? placeItems(item) : null}>objet {item}</button>
 	{/each}
-	<ButtonIndice />
+	<ButtonIndice onClick={()=>isActive=true}></ButtonIndice>
 	<Button {url} disabled={disabled()} >Oeuvre suivante</Button>
+	<Modal bind:isActive {PageId}/>
 </div>
 
 <style lang="postcss">
