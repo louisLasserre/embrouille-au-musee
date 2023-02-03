@@ -22,9 +22,6 @@
 		url = '/end';
 	}
 
-	function removeItems(itemId) {
-		$items = $items.filter((item) => item !== itemId);
-	}
 	function getItems(itemId) {
 		if ($items.includes(itemId)) {
 			$items = $items.filter((item) => item !== itemId);
@@ -67,7 +64,7 @@
 
 	<p>Inventaire</p>
 	{#each $items as item}
-		<button on:click={$exploringMode === 'placeItems' ? removeItems(item) : null}
+		<button on:click={$exploringMode === 'placeItems' ? placeItems(item) : null}
 			>objet {item}</button
 		>
 	{/each}
