@@ -7,6 +7,7 @@ import Data from '$lib/data.json';
 interface ITableau {
   name: string;
   description: string;
+  itemId: number;
 }
 interface loadParams {
   params: {

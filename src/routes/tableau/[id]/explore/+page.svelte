@@ -27,24 +27,36 @@
 		}
 	}
 
-	function removeItems(itemId){
-		$items = $items.filter(item => item !== itemId)
+	function placeItems(item){
+		if(item === itemId){
+			$items = $items.filter(item => item !== itemId)
+		}
 	}
 
-	$: disabled = !$items.includes(itemId);
-</script>
+	$: disabled = () => {
+		if($exploringMode === 'placeItems') {
+				return $items.includes(itemId);
+		}else if ($exploringMode === 'getItems'){
+			return !$items.includes(itemId);
+		}
+	}
+
+	</script>
 
 <div>
 	<h1 class="text-red-600">{name}</h1>
-	<p class="text-background font-texts font-normal">{description}</p>
-	{#if !$items.includes(itemId)}
+	<p class="text-buttons">{description}</p>
+	{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
 		<button on:click={() => getItems(itemId)}>item n° {itemId}</button>
 	{/if}
-	<p>Inventaire</p>
+	{#if $exploringMode === 'placeItems' && !$items.includes(itemId)}
+		<p>item n° {itemId}</p>
+	{/if}
+		<p>Inventaire</p>
 	{#each $items as item}
-		<button on:click={$exploringMode === 'placeItems' ? removeItems(item) : null}>objet {item}</button>
+		<button on:click={$exploringMode === 'placeItems' ? placeItems(item) : null}>objet {item}</button>
 	{/each}
-	<Button {url} {disabled}>Oeuvre suivante {PageId}</Button>
+	<Button {url} disabled={disabled()} >Oeuvre suivante</Button>
 </div>
 
 <style lang="postcss">
