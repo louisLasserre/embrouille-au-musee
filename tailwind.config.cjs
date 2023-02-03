@@ -6,14 +6,19 @@ module.exports = {
       colors: {
         buttons: "#FF8367",
         text: "#121F30",
-        textBtn: "#FFEAD6",
-        textBtnDisabled :"#CCBBAB",
-        background: "#FF8367",
-        backgroundDisabled: '#CC6952'
+        background: "#FFEAD6",
+        textLightDisabled :"#CCBBAB",
+        textDark: '#121F30',
+        buttonDisabled: '#CC6952'
       },
       fontFamily: {
         title: 'ClassicalRomance',
-        texts: 'AddingtonCF'
+        text: 'Raleway-Regular',
+        textTrans: 'Raleway-Italic',
+        button: 'Raleway-Bold',
+        buttonTrans: 'Raleway-Medium',
+        ssTitle: 'Raleway-Light',
+        titlePainting: 'Raleway-SemiBold',
       },
       borderRadius: {
         'none': '0',
@@ -23,6 +28,13 @@ module.exports = {
         'full': '9999px',
       },
     },
+    fontSize:{
+      'title': '45px',
+      'text' : '15px',
+      'button' : '16px',
+      'ssTitle': '14px',
+      'titlePainting': '20px',
+    }
   },
   plugins: [],
 }
