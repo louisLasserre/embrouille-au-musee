@@ -16,6 +16,16 @@ p {
   @apply font-texts font-normal
 }
 
+.chapeau {
+  @apply top-[0.1rem] left-1/2 w-[51%] -translate-x-[56.5%];
+}
+.noeud {
+
+}
+.testament {
+
+}
+
 @font-face {
   font-family: 'ClassicalRomance';
   font-style: normal;

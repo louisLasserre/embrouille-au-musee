@@ -1,13 +1,15 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from '../$types';
 
+import { paintingsData } from '$lib/data.ts';
 
-import Data from '$lib/data.json';
 
 interface ITableau {
   name: string;
   description: string;
+  fileName: string;
   itemId: number;
+
 }
 interface loadParams {
   params: {
@@ -20,14 +22,12 @@ export const load = (({ params }: loadParams) => {
 
   try {
     const { id } = params
-    console.log('server id', id);
-
-    const tableau: ITableau = Data[Number(id) - 1]
+    const tableau: ITableau = paintingsData[Number(id) - 1]
 
     return {
       tableau,
       id,
-      total: Data.length
+      total: paintingsData.length
     }
 
   }catch(err) {
