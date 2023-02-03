@@ -4,6 +4,7 @@
 	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import Painting from 'src/components/Painting.svelte';
 	import Item from 'src/components/Item.svelte';
+	import ButtonIndice from 'src/components/ButtonIndice.svelte';
 
 	export let data: PageData;
 
@@ -24,8 +25,26 @@
 	function removeItems(itemId) {
 		$items = $items.filter((item) => item !== itemId);
 	}
+	function getItems(itemId) {
+		if ($items.includes(itemId)) {
+			$items = $items.filter((item) => item !== itemId);
+		} else {
+			$items = [...$items, itemId];
+		}
+	}
+	function placeItems(item) {
+		if (item === itemId) {
+			$items = $items.filter((item) => item !== itemId);
+		}
+	}
 
-	$: disabled = !$items.includes(itemId);
+	$: disabled = () => {
+		if ($exploringMode === 'placeItems') {
+			return $items.includes(itemId);
+		} else if ($exploringMode === 'getItems') {
+			return !$items.includes(itemId);
+		}
+	};
 
 	const objectClick = () => {
 		console.log('you clicked');
@@ -39,13 +58,21 @@
 		{/if}
 	</Painting>
 
+	{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
+		<button on:click={() => getItems(itemId)}>item n° {itemId}</button>
+	{/if}
+	{#if $exploringMode === 'placeItems' && !$items.includes(itemId)}
+		<p>item n° {itemId}</p>
+	{/if}
+
 	<p>Inventaire</p>
 	{#each $items as item}
 		<button on:click={$exploringMode === 'placeItems' ? removeItems(item) : null}
 			>objet {item}</button
 		>
 	{/each}
-	<Button {url} {disabled}>Oeuvre suivante {PageId}</Button>
+	<ButtonIndice />
+	<Button {url} disabled={disabled()}>Oeuvre suivante</Button>
 </div>
 
 <style lang="postcss">

@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        buttons: "#9E0039",
-        text: "#33493A",
-        background: "#FFE8AB"
+        buttons: "#FF8367",
+        text: "#FFEAD6",
+        textDisabled :"#CCBBAB",
+        background: "#FF8367",
+        backgroundDisabled: '#CC6952'
       },
       fontFamily: {
         title: 'ClassicalRomance',
