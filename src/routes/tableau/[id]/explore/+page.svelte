@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from '../$types';
 	import Button from '../../../../components/Button.svelte';
+	import ButtonIndice from 'src/components/ButtonIndice.svelte';
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
 	export let data: PageData;
@@ -44,6 +45,7 @@
 	{#each $items as item}
 		<button on:click={$exploringMode === 'placeItems' ? removeItems(item) : null}>objet {item}</button>
 	{/each}
+	<ButtonIndice {url}></ButtonIndice>
 	<Button {url} {disabled}>Oeuvre suivante {PageId}</Button>
 </div>
 
