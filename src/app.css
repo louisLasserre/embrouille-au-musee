@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 h1,
 h2,
 h3,
@@ -12,19 +11,17 @@ h6 {
   @apply font-title
 }
 
-
-
 .chapeau {
   @apply top-[0.1rem] left-1/2 w-[51%] -translate-x-[56.5%];
 }
 .noeud {
-
+  @apply top-[42%] w-[10%] left-[33%]
 }
 .testament {
 
 }
 .inventory {
-  width: 20px;
+  width: 40px;
 }
 .inventory .item {
   @apply w-full object-contain relative
