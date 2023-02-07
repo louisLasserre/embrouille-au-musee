@@ -1,26 +1,19 @@
 <script lang="ts">
 	import type { PageData } from '../$types';
 	import Button from 'src/components/Button.svelte';
-	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
+	// import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import Painting from 'src/components/Painting.svelte';
 	import Item from 'src/components/Item.svelte';
 	import ButtonIndice from 'src/components/ButtonIndice.svelte';
-<<<<<<< HEAD
 	import Modal from 'src/components/Modal.svelte';
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
-=======
->>>>>>> f54ee1f6aebd21e5de1b9ed1dc2a8980932a5080
 
 	export let data: PageData;
 
 	let PageId = Number(data.id);
-<<<<<<< HEAD
 	let isActive = false;
-	const { name, description, itemId } = data.tableau;
-=======
 
 	const { name, description, itemId, fileName } = data.tableau;
->>>>>>> f54ee1f6aebd21e5de1b9ed1dc2a8980932a5080
 
 	let url: string = '/find-painting';
 	if (PageId === $actualPaintingIndex + 1) {

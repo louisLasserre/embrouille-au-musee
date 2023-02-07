@@ -12,5 +12,5 @@
 		<span class="text-buttons">“J’y suis”</span>
 		pour commencer !
 	</p>
-	<a href="/find-painting">Commencer la visite</a>
+	<a href="/find-painting" class="bg-buttons w-48 flex justify-center px-6 py-3 rounded-md text-background">J'y suis !</a>
 </div>
