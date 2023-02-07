@@ -1,16 +1,18 @@
 <script lang="ts">
 	export let url: string;
 	export let disabled: boolean;
+	export let className: string;
+
+	let buttonStyle = "w-48 flex justify-center text-background font-button px-6 py-3 rounded-md bg-button";
+	let disabledStyle = "w-48 flex justify-center text-background font-button px-6 py-3 rounded-md bg-buttonDisabled"
 </script>
 
-<div
-	class={disabled
-		? 'w-48 bg-buttonDisabled text-CCBBAB px-6 py-3 rounded-md'
-		: 'w-48 flex justify-center	bg-buttons text-background px-6 py-3 rounded-md'}
->
-	{#if !disabled}
-		<a href={url}><slot /></a>
-	{:else}
-		<slot />
-	{/if}
+
+<div class=" {className} ">
+{#if !disabled}
+	<a href={url} class="{buttonStyle}"><slot /></a>
+{:else}
+	<button class="{disabledStyle}" disabled><slot /></button>
+{/if}
 </div>
+
