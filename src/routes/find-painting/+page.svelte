@@ -2,8 +2,6 @@
 	import Button from '../../components/Button.svelte';
 	import { actualPaintingIndex, exploringMode } from '../../stores';
 
-	console.log($actualPaintingIndex);
-
 	let nextPageType = 'video';
 
 	if ($exploringMode === 'placeItems') {

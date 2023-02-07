@@ -25,6 +25,13 @@ p {
 .testament {
 
 }
+.inventory {
+  width: 20px;
+}
+.inventory .item {
+  @apply w-full object-contain relative
+}
+
 
 @font-face {
   font-family: 'ClassicalRomance';
