@@ -17,7 +17,6 @@ export const paintingsData: IPaintingsData[] = [
     itemId: 1 ,
     clueCollect: "Mais que fait ce foulard ici ?!",
     clueReturn: "Je vous en supplie, retrouvez mon testament !",
-    itemId: 1,
     missingItemId: 2
   },
   {
