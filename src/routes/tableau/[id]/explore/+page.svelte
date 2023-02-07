@@ -1,16 +1,19 @@
 <script lang="ts">
 	import type { PageData } from '../$types';
 	import Button from 'src/components/Button.svelte';
-	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
+	// import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import Painting from 'src/components/Painting.svelte';
 	import Item from 'src/components/Item.svelte';
 	import ButtonIndice from 'src/components/ButtonIndice.svelte';
 	import Inventory from 'src/components/Inventory.svelte';
 	import type { IItemData } from 'src/lib/items';
+	import Modal from 'src/components/Modal.svelte';
+	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
 	export let data: PageData;
 
 	let PageId = Number(data.id);
+	let isActive = false;
 
 	const { name, description, itemId, fileName, missingItemId } = data.tableau;
 
@@ -50,6 +53,7 @@
 	<p>Inventaires</p>
 	<Inventory {missingItemId} />
 
-	<ButtonIndice />
+	<ButtonIndice onClick={() => (isActive = true)} />
 	<Button {url} disabled={disabled()}>Oeuvre suivante</Button>
+	<Modal bind:isActive {PageId} />
 </div>
