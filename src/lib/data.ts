@@ -24,7 +24,7 @@ export const paintingsData: IPaintingsData[] = [
     description: "Guillaume Alaux - 1904",
     fileName: "madame-samazeuilh",
     itemId: 2,
-    clueCollect: "Mais que fait ce foulard ici ?!",
+    clueCollect: "Que fait cette feuille sur ma tête ?!",
     clueReturn :"Partez à la recherche de mon ravissant chapeau !",
     missingItemId: 3
   },
@@ -33,9 +33,8 @@ export const paintingsData: IPaintingsData[] = [
     description: "Alfred Roll - 1885",
     fileName: "alfred-roll",
     itemId: 3,
-    clueCollect: "Mais que fait ce foulard ici ?!",
+    clueCollect: "Ce chapeau hideux ne m’appartient pas !",
     clueReturn:"Dépêchez vous de retrouver mon foulard !",
-
     missingItemId: 1
   }
 
