@@ -31,6 +31,7 @@
 			borderRadius="0"
 			controlsOnPause={true}
 			thumbSize="0"
+			color="#FF8367"
 		/>
 	</div>
 
@@ -47,7 +48,7 @@
 				<span class="font-text">Transcription: </span>{transcription}
 			</p>
 			<button class="underline text-background whitespace-nowrap" on:click={() => showMore()}
-				>Afficher plus</button
+				>Afficher {IsShowMore ? 'moins' : 'plus'}</button
 			>
 		</div>
 		<div class="w-fit mx-auto">
