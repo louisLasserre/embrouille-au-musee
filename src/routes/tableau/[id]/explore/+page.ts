@@ -10,6 +10,7 @@ interface ITableau {
   fileName: string;
   itemId: number;
   missingItemId: number;
+  transcription: string
 
 
 }

@@ -8,27 +8,50 @@
 
 	export let data: PageData;
 
-	const { name, description, fileName } = data.tableau;
+	const { name, description, fileName, transcription } = data.tableau;
 
 	const poster = `/paintings/${fileName}.jpg`;
-	const source = [
-		'https://www.server.com/video.webm',
-		'https://www.server.com/video.mp4',
-		'https://www.server.com/video.ogv'
-	];
+	const source = [`/videos/madame-samazeuilh.mp4`];
+	const videoHeight = window.innerHeight;
+	const videoWidth = window.innerWidth;
+
+	let IsShowMore: boolean = false;
+	const showMore = () => {
+		IsShowMore = !IsShowMore;
+	};
 </script>
 
-<div class="h-[100vh] relative">
-	<div class="h-full w-full absolute -z-10 overflow-hidden">
-		<VideoPlayer {poster} {source} height="1920" width="1080" borderRadius="0" />
+<div class="h-[100vh] relative flex flex-col justify-end">
+	<div class="h-full w-full absolute overflow-hidden">
+		<VideoPlayer
+			{poster}
+			{source}
+			height={videoHeight}
+			width={videoWidth}
+			borderRadius="0"
+			controlsOnPause={true}
+			thumbSize="0"
+		/>
 	</div>
 
-	<h1 class="text-red-600">{name}</h1>
-	<p class="text-background font-texts font-normal">{description}</p>
+	<article class="z-10 relative p-8 pt-0">
+		<h1 class="text-background text-titlePainting">{name}</h1>
+		<p class="text-background font-texts font-light ml-4">{description}</p>
 
-	<p>page vidéo du tableau {data.id}</p>
-	<Button url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
+		<div class="flex min-w-0 items-start mb-6 {IsShowMore ? 'flex-col' : ''}">
+			<p
+				class="font-textTrans transition-all  overflow-y-auto text-background {!IsShowMore
+					? 'whitespace-nowrap max-h-[2rem]'
+					: 'max-h-[6rem]'} overflow-hidden text-ellipsis"
+			>
+				<span class="font-text">Transcription: </span>{transcription}
+			</p>
+			<button class="underline text-background whitespace-nowrap" on:click={() => showMore()}
+				>Afficher plus</button
+			>
+		</div>
+		<div class="w-fit mx-auto">
+			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
+		</div>
+	</article>
 </div>
-
-<style lang="postcss">
-</style>

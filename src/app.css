@@ -30,6 +30,10 @@ h6 {
   @apply w-full object-contain relative
 }
 
+.controls {
+  display: none !important;
+}
+
 
 @font-face {
   font-family: 'ClassicalRomance';
@@ -83,4 +87,3 @@ h6 {
   src: url('/fonts/Raleway-Italic.ttf'); /* IE9 Compat Modes */
   src: local(), url('/fonts/Raleway-Italic.ttf') format('truetype')
 }
-
