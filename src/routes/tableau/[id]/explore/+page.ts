@@ -9,6 +9,8 @@ interface ITableau {
   description: string;
   fileName: string;
   itemId: number;
+  missingItemId: number;
+
 
 }
 interface loadParams {

@@ -5,6 +5,8 @@ export interface IPaintingsData {
   itemId: number;
   clueCollect: string;
   clueReturn: string;
+  missingItemId: number;
+
 }
 
 export const paintingsData: IPaintingsData[] = [
@@ -15,6 +17,8 @@ export const paintingsData: IPaintingsData[] = [
     itemId: 1 ,
     clueCollect: "Mais que fait ce foulard ici ?!",
     clueReturn: "Je vous en supplie, retrouvez mon testament !"
+    itemId: 1,
+    missingItemId: 2
   },
   {
     name: "Portrait de Madame Samazeuilh",
@@ -24,6 +28,7 @@ export const paintingsData: IPaintingsData[] = [
     clueCollect: "Mais que fait ce foulard ici ?!",
     clueReturn :"Partez à la recherche de mon ravissant chapeau !"
 
+    missingItemId: 3
   },
   {
     name: "Alfred Roll autoportrait",
@@ -33,6 +38,7 @@ export const paintingsData: IPaintingsData[] = [
     clueCollect: "Mais que fait ce foulard ici ?!",
     clueReturn:"Dépêchez vous de retrouver mon foulard !"
 
+    missingItemId: 1
   }
 
 ]
