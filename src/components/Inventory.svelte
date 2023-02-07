@@ -32,6 +32,6 @@
 {#key $items}
 	{#each $items as item}
 		{item}
-		<Item itemId={item} inventory={true} {missingItemId} onClick={handleClick} />
+		<Item itemId={item} inventory={true} onClick={handleClick} />
 	{/each}
 {/key}
