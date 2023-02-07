@@ -34,7 +34,7 @@ module.exports = {
       'button' : '16px',
       'ssTitle': '14px',
       'titlePainting': '20px',
-    }
+    },
   },
   plugins: [],
 }
