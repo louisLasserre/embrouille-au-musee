@@ -35,6 +35,9 @@ module.exports = {
       'ssTitle': '14px',
       'titlePainting': '20px',
     },
+    BackgroundImage:{
+      'backgroundImg': "url('icons/fond_item.pgn')",
+    },
   },
   plugins: [],
 }
