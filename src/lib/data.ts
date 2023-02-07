@@ -16,7 +16,7 @@ export const paintingsData: IPaintingsData[] = [
     fileName: "les-heritiers",
     itemId: 1 ,
     clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn: "Je vous en supplie, retrouvez mon testament !"
+    clueReturn: "Je vous en supplie, retrouvez mon testament !",
     itemId: 1,
     missingItemId: 2
   },
@@ -26,8 +26,7 @@ export const paintingsData: IPaintingsData[] = [
     fileName: "madame-samazeuilh",
     itemId: 2,
     clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn :"Partez à la recherche de mon ravissant chapeau !"
-
+    clueReturn :"Partez à la recherche de mon ravissant chapeau !",
     missingItemId: 3
   },
   {
@@ -36,7 +35,7 @@ export const paintingsData: IPaintingsData[] = [
     fileName: "alfred-roll",
     itemId: 3,
     clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn:"Dépêchez vous de retrouver mon foulard !"
+    clueReturn:"Dépêchez vous de retrouver mon foulard !",
 
     missingItemId: 1
   }

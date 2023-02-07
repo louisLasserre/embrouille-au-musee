@@ -9,7 +9,7 @@
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
 	import type { PageData } from '../$types';
-	import type { IItemData } from 'src/lib/items';
+	import { itemsData, type IItemData } from 'src/lib/items';
 
 	export let data: PageData;
 
@@ -45,7 +45,7 @@
 </script>
 
 <div class="h-[100vh]">
-	<Painting src={`/paintings/${fileName}.jpeg`} alt="Autoportrait de Alfred Roll">
+	<Painting src={`/paintings/${fileName}.jpg`} alt="Autoportrait de Alfred Roll">
 		{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
 			<Item {itemId} onClick={handleClick} />
 		{/if}
