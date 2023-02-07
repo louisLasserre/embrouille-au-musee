@@ -34,6 +34,9 @@
 			color="#FF8367"
 		/>
 	</div>
+	<div class="h-full w-full absolute overflow-hidden pointer-events-none">
+		<div class="gradient" />
+	</div>
 
 	<article class="z-10 relative p-8 pt-0">
 		<h1 class="text-background text-titlePainting">{name}</h1>
@@ -47,7 +50,7 @@
 			>
 				<span class="font-text">Transcription: </span>{transcription}
 			</p>
-			<button class="underline text-background whitespace-nowrap" on:click={() => showMore()}
+			<button class="underline text-background whitespace-nowrap " on:click={() => showMore()}
 				>Afficher {IsShowMore ? 'moins' : 'plus'}</button
 			>
 		</div>
@@ -56,3 +59,17 @@
 		</div>
 	</article>
 </div>
+
+<style>
+	.gradient {
+		height: 100%;
+		width: 100%;
+		background: rgb(17, 17, 17);
+		background: linear-gradient(
+			0deg,
+			rgba(17, 17, 17, 1) 0%,
+			rgba(32, 32, 32, 1) 10%,
+			transparent 100%
+		);
+	}
+</style>
