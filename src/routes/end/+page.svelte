@@ -34,10 +34,10 @@
 </script>
 <body class="bg-background h-screen z-0 relative">
 	<div class="flex justify-center flex-col text-center pl-8 pr-8 gap-8 z-50">
-		<img src="/icons/fond_item.png" class="absolute z-[-1] opacity-50 left-0 top-48 w-fit">
+		<img src="/icons/fond_item.png" class="absolute z-[-1] opacity-50 left-0 top-64 w-fit">
 		<h1 class="font-title text-title m-0 p-0">{title}</h1>
 		<p class="text-text text-left ">{@html description}</p>
-		<img src="/paintings/les-heritiers.jpeg" class="w-fit pl-8 pr-8">
+		<img src="/paintings/les-heritiers.jpeg" class="w-fit top-64 pl-8 pr-8">
 		
 		<Button {url} id="btn">{text}</Button>
 	</div>
