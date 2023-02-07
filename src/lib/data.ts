@@ -16,8 +16,7 @@ export const paintingsData: IPaintingsData[] = [
     fileName: "les-heritiers",
     itemId: 1 ,
     clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn: "Je vous en supplie, retrouvez mon testament !"
-    itemId: 1,
+    clueReturn: "Je vous en supplie, retrouvez mon testament !",
     missingItemId: 2
   },
   {
@@ -25,9 +24,8 @@ export const paintingsData: IPaintingsData[] = [
     description: "Guillaume Alaux - 1904",
     fileName: "madame-samazeuilh",
     itemId: 2,
-    clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn :"Partez à la recherche de mon ravissant chapeau !"
-
+    clueCollect: "Que fait cette feuille sur ma tête ?!",
+    clueReturn :"Partez à la recherche de mon ravissant chapeau !",
     missingItemId: 3
   },
   {
@@ -35,9 +33,8 @@ export const paintingsData: IPaintingsData[] = [
     description: "Alfred Roll - 1885",
     fileName: "alfred-roll",
     itemId: 3,
-    clueCollect: "Mais que fait ce foulard ici ?!",
-    clueReturn:"Dépêchez vous de retrouver mon foulard !"
-
+    clueCollect: "Ce chapeau hideux ne m’appartient pas !",
+    clueReturn:"Dépêchez vous de retrouver mon foulard !",
     missingItemId: 1
   }
 
