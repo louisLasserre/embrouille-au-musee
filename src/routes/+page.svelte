@@ -3,20 +3,27 @@
 </script>
 
 
-<div class="w-screen h-screen bg-background py-10">
-	<h1 class="font-title text-title text-textDark flex justify-center uppercase">
-		Bienvenue
+<div class="background">
+	<img src="/assets/madame-home.png" class="absolute top-0 right-0 w-80"/>
+	<h1 class="font-title text-title text-background pl-10 pt-52 flex justify-center uppercase">
+		Embrouille au musée
 	</h1>
-	<p class="text-textDark text-text font-text p-10">
-		Bonjour et bienvenue au Musée des Beaux-Arts de Bordeaux ! Pour commencer l’expérience, dirigez-vous devant le tableau
-		<span class="font-button text-button">“Les héritiers”</span>
-		avec votre téléphone en main et appuyez sur le bouton
-		<span class="font-button text-button">“J’y suis”</span>
-		pour commencer !
-	</p>
-	<div class="flex justify-center relative">
-		<img src="/paintings/les-heritiers.jpeg" class="z-10 rounded-md translate-y-1/3 w-2/3"/>
-		<img src="/icons/fond_item.png" class="opacity-50 absolute  left-0 z-0"/>
-	</div>
-	<Button url={"/find-painting"} className="absolute bottom-10 translate-x-2/3">J'y suis !</Button>
+	<img src="/assets/heritier-home.png" class="w-80"/>
+	<img src="/assets/alfred-home.png" class="w-80 absolute right-0 bottom-40"/>
+
+	<a
+			href="/home"
+			class=" absolute bottom-20 translate-x-2/3 flex justify-center text-text font-button px-6 py-3 rounded-md bg-background"
+	>
+		Commencer la visite
+	</a>
 </div>
+
+<style>
+	.background {
+		background-image: url("/assets/bg-home.png");
+		background-size: cover;
+		width: 100vw;
+		height: 100vh;
+	}
+</style>
