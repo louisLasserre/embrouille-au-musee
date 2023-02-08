@@ -9,8 +9,8 @@
 		$actualPaintingIndex = 0;
 
 		endPageData = {
-			title: 'BRAVO',
-			description: "Vous avez trouvé tous les objets en trop. Il vous reste à <span class='font-button text-button'>remettre les objets au bon propriétaire</span>, pour cela rendez-vous devant le tableau <span class='font-button text-button'>''Les héritiers'''</span>. Une fois que vous y êtes, appuyez sur le bouton <span class='font-button text-button'>''J'y suis''</span> !",
+			title: 'BRAVO !',
+			description: "Vous avez trouvé tous les objets en trop. Il vous reste à <span class='text-textDark font-medium'>remettre les objets au bon propriétaire</span>, pour cela rendez-vous devant le tableau <span class='text-textDark font-medium'>''Les héritiers'' </span>. Une fois que vous y êtes, appuyez sur le bouton <span class='text-textDark font-medium'>''J'y suis'</span> !",
 			button: {
 				url: '/tableau/1/explore',
 				text: "J'y suis"
@@ -20,8 +20,8 @@
 		$exploringMode = 'getItems';
 		$actualPaintingIndex = 0;
 		endPageData = {
-			title: 'Merci',
-			description: 'Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. </br> </br>  Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !',
+			title: 'FÉLICITATIONS !',
+			description: 'Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. <br> <br> Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !”',
 			button: {
 				url: '/',
 				text: "Quitter l'expèrience"

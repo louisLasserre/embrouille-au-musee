@@ -3,8 +3,10 @@
 	export let alt: HTMLImageElement['alt'];
 </script>
 
-<img class="absolute" {src} {alt} />
-<slot />
+<div class="relative">
+	<img class="max-w-full block h-auto" {src} {alt} />
+	<slot />
+</div>
 
 <style lang="postcss">
 </style>
