@@ -12,13 +12,13 @@ h6 {
 }
 
 .chapeau {
-  @apply top-[0.1rem] left-1/2 w-[51%] -translate-x-[56.5%];
+  @apply w-[85%] left-[7%]
 }
 .noeud {
   @apply top-[42%] w-[10%] left-[33%]
 }
 .testament {
-
+  @apply w-[35%] top-[14%] left-[35%]
 }
 .inventory {
   width: 40px;

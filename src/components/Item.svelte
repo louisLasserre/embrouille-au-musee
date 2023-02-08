@@ -4,6 +4,7 @@
 	export let itemId: IItemData['id'];
 
 	export let inventory: boolean = false;
+	export let className: string = '';
 
 	export let onClick: (itemId: IItemData['id']) => void;
 
@@ -12,11 +13,23 @@
 	const { id, name, fileName } = item;
 </script>
 
-<div class={inventory ? 'inventory' : ''}>
+{#if inventory}
+
+<div class={`inventory absolute ${className}`}>
 	<img
-		class={`absolute ${fileName} item`}
+		class={` item`}
 		on:click={() => onClick(itemId)}
 		src={`/items/${fileName}.png`}
 		alt={name}
 	/>
 </div>
+	{:else}
+	<div class="">
+		<img
+				class={` absolute ${fileName} item`}
+				on:click={() => onClick(itemId)}
+				src={`/items/${fileName}.png`}
+				alt={name}
+		/>
+	</div>
+{/if}

@@ -34,10 +34,13 @@
 		{#each paintingsData as item}
 			{#if $items.includes(item.itemId)}
 				<div class="w-20 relative">
-					<img src="/icons/fond_item.png" class="absolute"/>
-					<div class=" ">
-						<Item itemId={item.itemId} inventory={true} onClick={handleClick} />
-					</div>
+					<img src="/icons/fond_item.png" class="object-contain"/>
+						<Item
+							itemId={item.itemId}
+							inventory={true}
+							onClick={handleClick}
+							className="scale-125 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center"
+						/>
 				</div>
 				{:else}
 				<img src="/icons/fond_item.png" class="opacity-50 w-20"/>
