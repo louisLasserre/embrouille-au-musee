@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { exploringMode, items } from 'src/stores';
-
+	import { paintingsData } from "src/lib/data";
 	import Item from './Item.svelte';
 	import type { IItemData } from 'src/lib/items';
 
@@ -29,9 +29,19 @@
 	}
 </script>
 
-{#key $items}
-	{#each $items as item}
-		{item}
-		<Item itemId={item} inventory={true} onClick={handleClick} />
-	{/each}
-{/key}
+<div class="flex flex-row justify-between">
+	{#key $items}
+		{#each paintingsData as item}
+			{#if $items.includes(item.itemId)}
+				<div class="w-20 relative">
+					<img src="/icons/fond_item.png" class="absolute"/>
+					<div class=" ">
+						<Item itemId={item.itemId} inventory={true} onClick={handleClick} />
+					</div>
+				</div>
+				{:else}
+				<img src="/icons/fond_item.png" class="opacity-50 w-20"/>
+			{/if}
+		{/each}
+	{/key}
+</div>

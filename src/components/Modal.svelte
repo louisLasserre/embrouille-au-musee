@@ -11,7 +11,7 @@
 	<div
 		class={' bg-background text-textDark  py-4 px-6 gap-2 flex flex-col rounded-md	w-80 font-text'}
 	>
-		<button on:click={() => (isActive = false)} class="absolute h-14 w-14 -left-4 -top-4"
+		<button on:click={() => (isActive = false)} class="absolute h-14 w-14 -right-7 -top-5"
 			><img src="/icons/close.png" /></button
 		>
 		{#if text}

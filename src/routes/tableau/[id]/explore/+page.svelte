@@ -44,17 +44,25 @@
 	}
 </script>
 
-<div class="h-[100vh]">
+<div class="h-screen w-screen bg-background">
 	<Painting src={`/paintings/${fileName}.jpg`} alt="Autoportrait de Alfred Roll">
 		{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
 			<Item {itemId} onClick={handleClick} />
 		{/if}
 	</Painting>
-
-	<p>Inventaires</p>
-	<Inventory {missingItemId} />
-
-	<ButtonIndice onClick={() => (isActive = true)} />
-	<Button {url} disabled={disabled()}>Oeuvre suivante</Button>
+	<div class="px-10 py-5">
+		<div class="flex flex-row justify-between">
+			<div>
+				<h2 class="font-titlePainting text-titlePainting uppercase">{name}</h2>
+				<p class="font-ssTitle text-ssTitle pl-5">{description}</p>
+			</div>
+			<ButtonIndice onClick={() => (isActive = true)} />
+		</div>
+		<p class=" font-buttonTrans underline pb-5">Inventaire :</p>
+		<Inventory {missingItemId} />
+		<div class="flex justify-center pt-10">
+			<Button {url} disabled={disabled()}>Oeuvre suivante</Button>
+		</div>
+	</div>
 	<Modal bind:isActive {PageId} />
 </div>

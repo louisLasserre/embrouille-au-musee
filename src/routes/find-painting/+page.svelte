@@ -29,9 +29,9 @@
 		pour commencer !
 	</p>
 	<div class="flex justify-center relative h-80">
-		<img src="/paintings/{src}" class="z-10 rounded-md translate-y-[15%]"/>
+		<img src="/paintings/{src}" class="w-74 h-64 z-10 rounded-md translate-y-[15%]"/>
 		<img src="/icons/fond_item.png" class="opacity-50 absolute left-0 z-0"/>
 	</div>
 
-	<Button className="absolute bottom-10 translate-x-2/3"  url="/tableau/{$actualPaintingIndex + 1}/{nextPageType}">J'y suis</Button>
+	<Button className="absolute bottom-10 translate-x-36"  url="/tableau/{$actualPaintingIndex + 1}/{nextPageType}">J'y suis</Button>
 </div>

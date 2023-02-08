@@ -14,9 +14,9 @@
 		S’il vous plaît retrouver les objets intrus et restituez-les au bon endroit !
 	</p>
 	<div class="flex justify-center pt-10">
-		<img src="/assets/paintings-all.png" class="w-2/3"/>
+		<img src="/assets/paintings-all.png" class="w-2/3 absolute bottom-28"/>
 	</div>
-	<div class="flex justify-center fixed bottom-20 translate-x-2/3">
+	<div class="absolute bottom-20 translate-x-24">
 		<Button url="/find-painting">Trouver les objets</Button>
 	</div>
 </body>
