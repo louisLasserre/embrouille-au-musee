@@ -8,6 +8,7 @@
 </script>
 
 {#if isActive}
+	<section on:click={() => (isActive = false)} on:keydown />
 	<div
 		class={' bg-background text-textDark  py-4 px-6 gap-2 flex flex-col rounded-md	w-80 font-text'}
 	>
@@ -30,10 +31,19 @@
 {/if}
 
 <style>
+	section {
+		position: fixed;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		z-index: 2;
+	}
 	div {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+
+		z-index: 20;
 	}
 </style>
