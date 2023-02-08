@@ -8,7 +8,5 @@
 	<slot />
 </div>
 
-
-
 <style lang="postcss">
 </style>

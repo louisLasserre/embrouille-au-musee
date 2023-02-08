@@ -2,10 +2,9 @@
 	import VideoPlayer from 'svelte-video-player';
 
 	import Button from 'src/components/Button.svelte';
-	import Painting from 'src/components/Painting.svelte';
 
 	import type { PageData } from '../$types';
-	import ButtonIndice from 'src/components/ButtonIndice.svelte';
+
 	import Modal from 'src/components/Modal.svelte';
 
 	export let data: PageData;
@@ -13,7 +12,7 @@
 	const { name, description, fileName, transcription } = data.tableau;
 
 	const poster = `/paintings/${fileName}.jpg`;
-	const source = [`/videos/madame-samazeuilh.mp4`];
+	const source = [`/videos/${fileName}.mp4`];
 	const videoHeight = window.innerHeight;
 	const videoWidth = window.innerWidth;
 	let isActive: boolean = false;

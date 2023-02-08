@@ -9,14 +9,15 @@
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
 	import type { PageData } from '../$types';
-	import { itemsData, type IItemData } from 'src/lib/items';
+	import type { IItemData } from 'src/lib/items';
+	import ExploreReactions from 'src/components/ExploreReactions.svelte';
 
 	export let data: PageData;
 
 	let PageId = Number(data.id);
 	let isActive = false;
 
-	const { name, description, itemId, fileName, missingItemId } = data.tableau;
+	const { name, description, itemId, fileName, missingItemId, reactionVideos } = data.tableau;
 
 	let url: string = '/find-painting';
 	if (PageId === $actualPaintingIndex + 1) {
@@ -42,25 +43,42 @@
 	function getItems(id: IItemData['id']) {
 		$items = [...$items, id];
 	}
+
+	let startChildVideo: (videoName: string) => void;
+	$: reaction = (videoName?: string) => {
+		if ($exploringMode === 'getItems') {
+			startChildVideo('clueGetItems');
+		} else {
+			startChildVideo('cluePlaceItems');
+		}
+	};
 </script>
 
 <div class="h-screen w-screen bg-background">
-	<Painting src={`/paintings/${fileName}.jpg`} alt="Autoportrait de Alfred Roll">
-		{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
-			<Item {itemId} onClick={handleClick} />
-		{/if}
-	</Painting>
+	<div class="relative w-full h-3/5 overflow-hidden">
+		<Painting src={`/paintings/${fileName}.jpg`} alt="Autoportrait de Alfred Roll">
+			{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
+				<Item {itemId} onClick={handleClick} />
+			{/if}
+		</Painting>
+		<ExploreReactions videosUrls={reactionVideos} bind:startVideo={startChildVideo} />
+	</div>
+
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">
 		<div class="flex flex-row justify-between">
 			<div>
 				<h2 class="font-titlePainting text-titlePainting uppercase">{name}</h2>
 				<p class="font-ssTitle text-ssTitle pl-5">{description}</p>
 			</div>
-			<ButtonIndice onClick={() => (isActive = true)} />
+			<ButtonIndice
+				onClick={() => {
+					isActive = true;
+					reaction();
+				}}
+			/>
 		</div>
 		<p class=" font-buttonTrans underline">Inventaire :</p>
 		<Inventory {missingItemId} />
-
 		<Button {url} disabled={disabled()} className="flex justify-center">Oeuvre suivante</Button>
 	</div>
 	<Modal bind:isActive {PageId} />
