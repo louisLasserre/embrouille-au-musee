@@ -18,11 +18,9 @@
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">C'est parti !</h1>
 	{:else}
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">Au suivant !</h1>
-		<p class="text-textDark uppercase font-medium text-center mt-3">
-			Vous avez trouvé {$items.length}/3 objets !
-		</p>
-	{/if}
-
+		<p class="text-textDark uppercase font-medium text-center mt-3">Vous avez trouvé {$items.length} sur 3 objets !</p>
+		{/if}
+	
 	<p class="text-textDark text-text font-text p-10">
 		Digirez-vous devant le tableau
 		<span class="font-bold">{paintingName}</span>
