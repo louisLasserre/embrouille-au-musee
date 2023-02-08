@@ -2,7 +2,7 @@
 </script>
 
 
-<div class="background p-5">
+<div class="background p-5 relative">
 	<div class="flex justify-end">
 		<img src="/assets/madame-home.png" class=" w-[80%]"/>
 	</div>
@@ -13,12 +13,11 @@
 	<div class="flex justify-end">
 		<img src="/assets/alfred-home.png" class="w-[80%]"/>
 	</div>
-	<div class="flex  justify-center pt-5">
-		<a href="/home" class=" flex justify-center text-text font-button px-6 py-3 rounded-md bg-background w-60">
+	<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-60">
+		<a href="/home" class=" flex justify-center text-text font-button px-6 py-3 rounded-md bg-background ">
 		Commencer la visite
 		</a>
 	</div>
-
 </div>
 
 <style>

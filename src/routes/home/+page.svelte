@@ -16,7 +16,7 @@
 	<div class="flex justify-center">
 		<img src="/assets/paintings-all.png" />
 	</div>
-	<div class="pt-5 fixed bottom-10 left-1/2 -translate-x-1/2">
+	<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-48">
 		<Button url="/find-painting">Trouver les objets</Button>
 	</div>
 </body>
