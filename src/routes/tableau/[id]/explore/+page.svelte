@@ -77,9 +77,10 @@
 				}}
 			/>
 		</div>
-		<p class=" font-buttonTrans underline">Inventaire :</p>
-		<Inventory {missingItemId} />
-		<Button {url} disabled={disabled()} className="flex justify-center">Oeuvre suivante</Button>
+
+		<Inventory {missingItemId} {itemId} />
+
+		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button>
 	</div>
 	<Modal bind:isActive {PageId} />
 </div>

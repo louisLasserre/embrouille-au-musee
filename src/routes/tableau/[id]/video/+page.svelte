@@ -46,17 +46,19 @@
 		<h1 class="text-background text-titlePainting">{name}</h1>
 		<p class="text-background font-texts font-light ml-4">{description}</p>
 
-		<div class="flex min-w-0 items-start mb-6 {IsShowMore ? 'flex-col' : ''}">
-			<p
-				class="font-textTrans transition-all max-h-[2rem] overflow-y-auto text-background {!IsShowMore
-					? 'whitespace-nowrap '
-					: 'max-h-[6rem]'} overflow-hidden text-ellipsis"
-			>
-				<span class="font-text">Transcription: </span>{transcription}
-			</p>
-			<button class="underline text-background whitespace-nowrap " on:click={() => showMore()}
-				>Afficher {IsShowMore ? 'moins' : 'plus'}</button
-			>
+		<div class="flex flex-col min-w-0 items-start my-6 {IsShowMore ? 'backdrop-blur-sm' : ''}">
+			{#if IsShowMore}
+				<p
+					class="font-textTrans transition-all max-h-[2rem] text-background {!IsShowMore
+						? 'whitespace-nowrap '
+						: 'max-h-[17rem]'}"
+				>
+				Transcription : "{transcription}"
+				</p>
+			{/if}
+			<button class="underline text-background whitespace-nowrap underline mt-5" on:click={() => showMore()}>
+				{IsShowMore ? 'Retour à la vidéo' : 'Je ne peux pas écouter la vidéo'}
+			</button>
 		</div>
 		<div class="w-fit mx-auto flex gap-6 items-center">
 			<button
