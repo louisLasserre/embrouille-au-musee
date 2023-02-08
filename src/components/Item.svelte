@@ -24,12 +24,10 @@
 	/>
 </div>
 	{:else}
-	<div class="">
 		<img
 				class={` absolute ${fileName} item`}
 				on:click={() => onClick(itemId)}
 				src={`/items/${fileName}.png`}
 				alt={name}
 		/>
-	</div>
 {/if}
