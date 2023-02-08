@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from 'src/components/Button.svelte';
-	import { actualPaintingIndex, exploringMode } from 'src/stores';
+	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import { paintingsData } from 'src/lib/data.ts';
 
 	let nextPageType = 'video';
