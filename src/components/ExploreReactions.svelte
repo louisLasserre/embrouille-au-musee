@@ -7,6 +7,7 @@
 		fileName: string;
 	}
 	export let videosUrls: videosUrls[];
+	export let imagefileName: string;
 	//const { clueGetItems, cluePlaceItems, placedItem } = videosUrls;
 
 	type TvideoElementsData = {
@@ -60,14 +61,17 @@
 </script>
 
 {#each videosUrls as video}
-	<video id={video.name} class="reactionVideo" src={`/videos/${video.fileName}.mp4`} />
+	<video
+		id={video.name}
+		class="reactionVideo"
+		src={`/videos/${video.fileName}.mp4`}
+		poster={`/paintings/${imagefileName}.jpg`}
+		playsinline
+		preload="auto"
+	/>
 {/each}
 
 <style>
-	.active {
-		z-index: 10;
-		position: relative;
-	}
 	video {
 		bottom: 40%;
 		top: 0;

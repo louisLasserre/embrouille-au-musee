@@ -61,7 +61,11 @@
 				<Item {itemId} onClick={handleClick} />
 			{/if}
 		</Painting>
-		<ExploreReactions videosUrls={reactionVideos} bind:startVideo={startChildVideo} />
+		<ExploreReactions
+			videosUrls={reactionVideos}
+			bind:startVideo={startChildVideo}
+			imagefileName={fileName}
+		/>
 	</div>
 
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">
