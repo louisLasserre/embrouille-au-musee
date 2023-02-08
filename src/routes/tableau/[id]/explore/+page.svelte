@@ -50,7 +50,7 @@
 			<Item {itemId} onClick={handleClick} />
 		{/if}
 	</Painting>
-	<div class="px-10 py-5">
+	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">
 		<div class="flex flex-row justify-between">
 			<div>
 				<h2 class="font-titlePainting text-titlePainting uppercase">{name}</h2>
@@ -58,11 +58,10 @@
 			</div>
 			<ButtonIndice onClick={() => (isActive = true)} />
 		</div>
-		<p class=" font-buttonTrans underline pb-5">Inventaire :</p>
+		<p class=" font-buttonTrans underline">Inventaire :</p>
 		<Inventory {missingItemId} />
-		<div class="flex justify-center pt-10">
-			<Button {url} disabled={disabled()}>Oeuvre suivante</Button>
-		</div>
+
+		<Button {url} disabled={disabled()} className="flex justify-center">Oeuvre suivante</Button>
 	</div>
 	<Modal bind:isActive {PageId} />
 </div>
