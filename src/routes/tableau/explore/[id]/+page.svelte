@@ -11,7 +11,7 @@
 	import type { PageData } from '../../$types';
 
 	import type { IItemData } from 'src/lib/items';
-	// import ExploreReactions from 'src/components/ExploreReactions.svelte';
+	import ExploreReactions from 'src/components/ExploreReactions.svelte';
 
 	export let data: PageData;
 
@@ -49,9 +49,6 @@
 	};
 
 	const handleClick = (itemId: IItemData['id']) => {
-		alert('indice');
-		console.log('click', $exploringMode, $items);
-
 		if ($exploringMode === 'getItems' && !$items.includes(itemId)) {
 			console.log('ok condiiton', { itemId });
 
@@ -78,7 +75,6 @@
 			startChildVideo('cluePlaceItems');
 		}
 	};
-	console.log('explore');
 </script>
 
 <div class="h-screen w-screen bg-background">
@@ -91,7 +87,7 @@
 				<Item {itemId} onClick={handleClick} />
 			{/if}
 		</Painting>
-		<!-- <ExploreReactions {videosUrls} bind:startVideo={startChildVideo} imagefileName={fileName} /> -->
+		 <ExploreReactions {videosUrls} bind:startVideo={startChildVideo} imagefileName={fileName} />
 	</div>
 
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">

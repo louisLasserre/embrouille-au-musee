@@ -63,7 +63,6 @@
 {#if $exploringMode === 'getItems'}
 	<div class="flex flex-row justify-center">
 		{#key $items}
-			<pre>{$items}</pre>
 			{#if $items.includes(itemId)}
 				<div class="w-32 relative">
 					<img src="/icons/fond_item.png" class="object-contain" />

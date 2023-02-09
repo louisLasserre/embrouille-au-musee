@@ -2,7 +2,7 @@
 	import Button from 'src/components/Button.svelte';
 	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import { paintingsData } from 'src/lib/data.ts';
-	import { loop_guard } from 'svelte/internal';
+
 
 	let nextPageType = 'video';
 
@@ -33,9 +33,9 @@
 		<span class="font-bold">“J’y suis”</span>
 		pour commencer !
 	</p>
-	<div class="flex justify-center relative h-80">
-		<img src="/paintings/{src}" class="w-74 h-64 z-10 rounded-md translate-y-[15%]" />
-		<img src="/icons/fond_item.png" class="opacity-50 absolute left-0 z-0" />
+	<div class="relative border-2 w-full h-full">
+		<img src="/paintings/{src}" class=" p-20 block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-auto z-10 rounded-md max-w-full max-h-full" />
+		<img src="/assets/fond_finding.png" class=" z-0" />
 	</div>
 
 	<Button
