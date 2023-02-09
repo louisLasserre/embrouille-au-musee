@@ -6,7 +6,7 @@
 
 	export let missingItemId: IItemData['id'];
 	export let itemId: IItemData['id'];
-	export let placedItem: (videoName: string) => void;
+	export let placedItem: () => void;
 
 	const handleClick = (itemId: IItemData['id']) => {
 		if ($exploringMode === 'placeItems' && !$items.includes(itemId)) {
@@ -16,8 +16,6 @@
 			getItems(itemId);
 		}
 		if ($exploringMode === 'placeItems') {
-			placedItem('placedItems');
-
 			placeItems(itemId);
 		}
 	};
@@ -28,6 +26,7 @@
 
 	function placeItems(id: IItemData['id']) {
 		if (missingItemId === id) {
+			placedItem();
 			$items = $items.filter((item) => item !== id);
 		}
 	}

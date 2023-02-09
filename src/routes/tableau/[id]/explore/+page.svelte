@@ -56,11 +56,13 @@
 		$items = [...$items, id];
 	}
 
-	const reaction = (videoName?: string) => {
-		if (videoName) {
-			return startChildVideo(videoName);
-		}
+	let hasPlacedItem = false;
+	const HasPlacedItem = () => {
+		startChildVideo('placedItems');
+		hasPlacedItem = true;
+	};
 
+	const reaction = (videoName?: string) => {
 		if ($exploringMode === 'getItems') {
 			startChildVideo('clueGetItems');
 		} else {
@@ -71,7 +73,10 @@
 
 <div class="h-screen w-screen bg-background">
 	<div class="relative w-full h-3/5 overflow-hidden">
-		<Painting src={`/paintings/${fileName}.jpg`} alt="Autoportrait de Alfred Roll">
+		<Painting
+			src={`/${hasPlacedItem ? 'reelpaintings' : 'paintings'}/${fileName}.jpg`}
+			alt="Autoportrait de Alfred Roll"
+		>
 			{#if !$items.includes(itemId) && $exploringMode === 'getItems'}
 				<Item {itemId} onClick={handleClick} />
 			{/if}
@@ -93,7 +98,7 @@
 			/>
 		</div>
 
-		<Inventory {missingItemId} placedItem={reaction} {itemId} />
+		<Inventory {missingItemId} placedItem={HasPlacedItem} {itemId} />
 
 		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button
 		>
