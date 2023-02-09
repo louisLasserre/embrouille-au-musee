@@ -28,10 +28,12 @@
 		url = '/end';
 	}
 
+	let startChildVideo: (videoName: string) => void;
 	$: disabled = () => {
 		if ($exploringMode === 'placeItems') {
 			return $items.includes(missingItemId);
 		}
+
 		return !$items.includes(itemId);
 	};
 
@@ -44,8 +46,11 @@
 		$items = [...$items, id];
 	}
 
-	let startChildVideo: (videoName: string) => void;
-	$: reaction = (videoName?: string) => {
+	const reaction = (videoName?: string) => {
+		if (videoName) {
+			return startChildVideo(videoName);
+		}
+
 		if ($exploringMode === 'getItems') {
 			startChildVideo('clueGetItems');
 		} else {
@@ -82,9 +87,10 @@
 			/>
 		</div>
 
-		<Inventory {missingItemId} {itemId} />
+		<Inventory {missingItemId} placedItem={reaction} {itemId} />
 
-		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button>
+		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button
+		>
 	</div>
 	<Modal bind:isActive {PageId} />
 </div>
