@@ -37,10 +37,13 @@
 			}
 			return videoData;
 		});
+		console.log(videoOn);
 
 		if (!videoOn) {
 			return;
 		}
+
+		console.log(videoOn);
 
 		videosOff.forEach((video) => {
 			if (!video) {
@@ -50,8 +53,8 @@
 			video.element.style.zIndex = '-1';
 		});
 		videoOn.element.currentTime = 0;
-		videoOn.element.style.zIndex = '20';
 		videoOn.element.play();
+		videoOn.element.style.zIndex = '20';
 		videoOn.element.addEventListener('ended', () => {
 			if (videoOn) {
 				videoOn.element.style.zIndex = '-1';
@@ -68,7 +71,9 @@
 		poster={`/paintings/${imagefileName}.jpg`}
 		playsinline
 		preload="auto"
-	/>
+	>
+		<track kind="captions" />
+	</video>
 {/each}
 
 <style>

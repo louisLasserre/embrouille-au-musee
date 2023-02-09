@@ -19,6 +19,16 @@
 
 	const { name, description, itemId, fileName, missingItemId, reactionVideos } = data.tableau;
 
+	let videosUrls = reactionVideos;
+	if ($exploringMode === 'getItems') {
+		videosUrls = reactionVideos.filter((video) => video.name === 'clueGetItems');
+	}
+	if ($exploringMode === 'placeItems') {
+		videosUrls = reactionVideos.filter(
+			(video) => video.name === 'cluePlaceItems' || video.name === 'placedItems'
+		);
+	}
+
 	let url: string = '/find-painting';
 	if (PageId === $actualPaintingIndex + 1) {
 		$actualPaintingIndex = PageId;
@@ -66,11 +76,7 @@
 				<Item {itemId} onClick={handleClick} />
 			{/if}
 		</Painting>
-		<ExploreReactions
-			videosUrls={reactionVideos}
-			bind:startVideo={startChildVideo}
-			imagefileName={fileName}
-		/>
+		<ExploreReactions {videosUrls} bind:startVideo={startChildVideo} imagefileName={fileName} />
 	</div>
 
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">

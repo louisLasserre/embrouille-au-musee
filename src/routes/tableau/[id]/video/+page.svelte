@@ -32,7 +32,6 @@
 			}
 			video.preload = 'auto';
 			video.playsInline = true;
-			video.classList.add('test');
 		}, 15);
 
 		// video.autoplay = true;
