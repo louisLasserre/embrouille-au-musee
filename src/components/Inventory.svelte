@@ -62,25 +62,28 @@
 
 {#if $exploringMode === 'getItems'}
 	<div class="flex flex-row justify-center">
-		{#if $items.includes(itemId)}
-			<div class="w-32 relative">
-				<img src="/icons/fond_item.png" class="object-contain" />
-				<Item
-					{itemId}
-					inventory={true}
-					onClick={handleClick}
-					className="scale-125 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center"
-				/>
-			</div>
-		{:else}
-			<div class="relative w-32 z-10">
-				<img src="/icons/fond_item.png" class="opacity-50 max-w-full block z-[-1]" />
-				<div
-					class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-[40%] origin-center w-1/2"
-				>
-					<p class="font-button">Trouvez l'intrus</p>
+		{#key $items}
+			<pre>{$items}</pre>
+			{#if $items.includes(itemId)}
+				<div class="w-32 relative">
+					<img src="/icons/fond_item.png" class="object-contain" />
+					<Item
+						{itemId}
+						inventory={true}
+						onClick={handleClick}
+						className="scale-125 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center"
+					/>
 				</div>
-			</div>
-		{/if}
+			{:else}
+				<div class="relative w-32 z-10">
+					<img src="/icons/fond_item.png" class="opacity-50 max-w-full block z-[-1]" />
+					<div
+						class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-[40%] origin-center w-1/2"
+					>
+						<p class="font-button">Trouvez l'intrus</p>
+					</div>
+				</div>
+			{/if}
+		{/key}
 	</div>
 {/if}

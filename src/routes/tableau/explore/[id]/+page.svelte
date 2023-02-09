@@ -8,9 +8,10 @@
 
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
 
-	import type { PageData } from '../$types';
+	import type { PageData } from '../../$types';
+
 	import type { IItemData } from 'src/lib/items';
-	import ExploreReactions from 'src/components/ExploreReactions.svelte';
+	// import ExploreReactions from 'src/components/ExploreReactions.svelte';
 
 	export let data: PageData;
 
@@ -35,7 +36,7 @@
 	}
 
 	if (PageId === data.total) {
-		url = '/end';
+		url = '/end ';
 	}
 
 	let startChildVideo: (videoName: string) => void;
@@ -48,12 +49,20 @@
 	};
 
 	const handleClick = (itemId: IItemData['id']) => {
+		alert('indice');
+		console.log('click', $exploringMode, $items);
+
 		if ($exploringMode === 'getItems' && !$items.includes(itemId)) {
+			console.log('ok condiiton', { itemId });
+
 			getItems(itemId);
 		}
 	};
 	function getItems(id: IItemData['id']) {
-		$items = [...$items, id];
+		items.update((items) => {
+			items.push(id);
+			return items;
+		});
 	}
 
 	let hasPlacedItem = false;
@@ -69,6 +78,7 @@
 			startChildVideo('cluePlaceItems');
 		}
 	};
+	console.log('explore');
 </script>
 
 <div class="h-screen w-screen bg-background">
@@ -81,7 +91,7 @@
 				<Item {itemId} onClick={handleClick} />
 			{/if}
 		</Painting>
-		<ExploreReactions {videosUrls} bind:startVideo={startChildVideo} imagefileName={fileName} />
+		<!-- <ExploreReactions {videosUrls} bind:startVideo={startChildVideo} imagefileName={fileName} /> -->
 	</div>
 
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">
@@ -93,15 +103,16 @@
 			<ButtonIndice
 				onClick={() => {
 					isActive = true;
-					reaction();
+					// reaction();
 				}}
 			/>
 		</div>
 
 		<Inventory {missingItemId} placedItem={HasPlacedItem} {itemId} />
 
-		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button
-		>
+		<Button url="/find-painting" disabled={disabled()} className="flex justify-center py-5">
+			Tableau suivant
+		</Button>
 	</div>
 	<Modal bind:isActive {PageId} />
 </div>

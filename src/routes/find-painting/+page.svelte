@@ -2,6 +2,7 @@
 	import Button from 'src/components/Button.svelte';
 	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import { paintingsData } from 'src/lib/data.ts';
+	import { loop_guard } from 'svelte/internal';
 
 	let nextPageType = 'video';
 
@@ -11,6 +12,8 @@
 
 	let src = paintingsData[$actualPaintingIndex].fileName + '.jpeg';
 	let paintingName = paintingsData[$actualPaintingIndex].name;
+
+	console.log('find-painting');
 </script>
 
 <div class="w-screen h-screen bg-background py-10 flex flex-col ">
@@ -18,9 +21,11 @@
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">C'est parti !</h1>
 	{:else}
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">Au suivant !</h1>
-		<p class="text-textDark uppercase font-medium text-center mt-3">Vous avez trouvé {$items.length} sur 3 objets !</p>
-		{/if}
-	
+		<p class="text-textDark uppercase font-medium text-center mt-3">
+			Vous avez trouvé {$items.length} sur 3 objets !
+		</p>
+	{/if}
+
 	<p class="text-textDark text-text font-text p-10">
 		Digirez-vous devant le tableau
 		<span class="font-bold">{paintingName}</span>
@@ -35,6 +40,6 @@
 
 	<Button
 		className="absolute bottom-10 translate-x-36"
-		url="/tableau/{$actualPaintingIndex + 1}/{nextPageType}">J'y suis</Button
+		url="/tableau/{nextPageType}/{$actualPaintingIndex + 1}">J'y suis</Button
 	>
 </div>

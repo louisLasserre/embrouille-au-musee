@@ -37,6 +37,7 @@
 		// video.autoplay = true;
 		// video.classList.add('test');
 	});
+	console.log('video');
 </script>
 
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
@@ -70,10 +71,7 @@
 					Transcription : "{transcription}"
 				</p>
 			{/if}
-			<button
-				class="underline text-background whitespace-nowrap underline mt-5"
-				on:click={() => showMore()}
-			>
+			<button class="underline text-background whitespace-nowrap mt-5" on:click={() => showMore()}>
 				{IsShowMore ? 'Retour à la vidéo' : 'Je ne peux pas écouter la vidéo'}
 			</button>
 		</div>
@@ -84,7 +82,7 @@
 			>
 
 			<Modal bind:isActive text={modalText} />
-			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
+			<Button disabled={false} url="/tableau/explore/{data.id}">Explorer l'oeuvre</Button>
 		</div>
 	</article>
 </div>
