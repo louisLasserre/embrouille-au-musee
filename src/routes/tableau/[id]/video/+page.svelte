@@ -6,6 +6,7 @@
 	import type { PageData } from '../$types';
 
 	import Modal from 'src/components/Modal.svelte';
+	import { onMount } from 'svelte';
 
 	export let data: PageData;
 
@@ -23,10 +24,24 @@
 	const showMore = () => {
 		IsShowMore = !IsShowMore;
 	};
+	onMount(() => {
+		setTimeout(() => {
+			const video: HTMLVideoElement | null = document.querySelector('#videoContainer video');
+			if (!video) {
+				return;
+			}
+			video.preload = 'auto';
+			video.playsInline = true;
+			video.classList.add('test');
+		}, 15);
+
+		// video.autoplay = true;
+		// video.classList.add('test');
+	});
 </script>
 
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
-	<div class="h-full w-full absolute overflow-hidden">
+	<div id="videoContainer" class="h-full w-full absolute overflow-hidden">
 		<VideoPlayer
 			{poster}
 			{source}
@@ -53,10 +68,13 @@
 						? 'whitespace-nowrap '
 						: 'max-h-[17rem]'}"
 				>
-				Transcription : "{transcription}"
+					Transcription : "{transcription}"
 				</p>
 			{/if}
-			<button class="underline text-background whitespace-nowrap underline mt-5" on:click={() => showMore()}>
+			<button
+				class="underline text-background whitespace-nowrap underline mt-5"
+				on:click={() => showMore()}
+			>
 				{IsShowMore ? 'Retour à la vidéo' : 'Je ne peux pas écouter la vidéo'}
 			</button>
 		</div>
