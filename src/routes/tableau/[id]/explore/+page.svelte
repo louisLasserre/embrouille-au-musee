@@ -19,7 +19,7 @@
 
 	const { name, description, itemId, fileName, missingItemId, reactionVideos } = data.tableau;
 
-	let url: string = '/find-painting';
+	// let url: string = '/find-painting';
 	if (PageId === $actualPaintingIndex + 1) {
 		$actualPaintingIndex = PageId;
 	}
@@ -36,6 +36,7 @@
 	};
 
 	const handleClick = (itemId: IItemData['id']) => {
+		alert('indice')
 		if ($exploringMode === 'getItems' && !$items.includes(itemId)) {
 			getItems(itemId);
 		}
@@ -52,6 +53,7 @@
 			startChildVideo('cluePlaceItems');
 		}
 	};
+
 </script>
 
 <div class="h-screen w-screen bg-background">
@@ -84,7 +86,7 @@
 
 		<Inventory {missingItemId} {itemId} />
 
-		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button>
+		<Button url="/find-painting" disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button>
 	</div>
 	<Modal bind:isActive {PageId} />
 </div>

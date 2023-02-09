@@ -11,12 +11,12 @@
 		Commençons la visite sans plus tarder ! Mais… Attendez Où est passé le <span class="font-button">testament</span> du tableau <span class="font-button">“Les Héritiers”</span> ?
 		Et que sont devenus le <span class="font-button">chapeau</span> de Madame Samazeuil et le <span class="font-button">foulard</span> d'Alfred Roll !
 		Je ne peux pas commencer la visite dans ses conditions.
-		S’il vous plaît retrouver les <span class="font-button">objets intrus</span> et <span class="font-button">restituez-les</span> au bon endroit ! "
+		S’il vous plaît retrouvez les <span class="font-button">objets intrus</span> et <span class="font-button">restituez-les</span> au bon endroit ! "
 	</p>
 	<div class="flex justify-center">
 		<img src="/assets/paintings-all.png" />
 	</div>
-	<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-48">
+	<div class="fixed bottom-10 left-1/2 -translate-x-1/2 w-48">
 		<Button url="/find-painting">Trouver les objets</Button>
 	</div>
 </body>

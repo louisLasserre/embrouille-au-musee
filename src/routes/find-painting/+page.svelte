@@ -19,22 +19,22 @@
 	{:else}
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">Au suivant !</h1>
 		<p class="text-textDark uppercase font-medium text-center mt-3">Vous avez trouvé {$items.length} sur 3 objets !</p>
-		{/if}
+	{/if}
 	
-	<p class="text-textDark text-text font-text p-10">
+	<p class="text-textDark text-text font-text px-10 pt-10 pb-5">
 		Digirez-vous devant le tableau
-		<span class="font-bold">{paintingName}</span>
+		<span class="font-button">{paintingName}</span>
 		avec votre téléphone en main et appuyez sur le bouton
-		<span class="font-bold">“J’y suis”</span>
+		<span class="font-button">“J’y suis”</span>
 		pour commencer !
 	</p>
-	<div class="flex justify-center relative h-80">
-		<img src="/paintings/{src}" class="w-74 h-64 z-10 rounded-md translate-y-[15%]" />
-		<img src="/icons/fond_item.png" class="opacity-50 absolute left-0 z-0" />
+	<div class="relative border-2 ">
+		<img src="/paintings/{src}" class="p-10 absolute top-1/2 -translate-y-1/2  h-auto z-10 rounded-md " />
+		<img src="/assets/fond-finding.png" class=" z-0" />
 	</div>
 
 	<Button
-		className="absolute bottom-10 translate-x-36"
+		className="fixed bottom-10 left-1/2 -translate-x-1/2 z-20"
 		url="/tableau/{$actualPaintingIndex + 1}/{nextPageType}">J'y suis</Button
 	>
 </div>
