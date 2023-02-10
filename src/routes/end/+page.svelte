@@ -21,7 +21,7 @@
 		$actualPaintingIndex = 0;
 		endPageData = {
 			title: 'FÉLICITATIONS !',
-			description: 'Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !”',
+			description: 'Guide : "Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !”',
 			button: {
 				url: '/',
 				text: "Quitter l'expèrience"
