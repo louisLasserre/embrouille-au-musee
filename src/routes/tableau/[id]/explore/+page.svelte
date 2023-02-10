@@ -91,7 +91,7 @@
 	<div class="px-10 py-5 flex flex-col justify-between h-[40%]">
 		<div class="flex flex-row justify-between">
 			<div>
-				<h2 class="font-titlePainting text-titlePainting uppercase">{name}</h2>
+				<h2 class="font-titlePainting text-titlePainting uppercase italic">{name}</h2>
 				<p class="font-ssTitle text-ssTitle pl-5">{description}</p>
 			</div>
 			<ButtonIndice
