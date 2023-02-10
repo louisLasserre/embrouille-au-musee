@@ -17,7 +17,7 @@
 
 <div class={`inventory absolute ${className}`}>
 	<img
-		class={` item`}
+		class={`item`}
 		on:click={() => onClick(itemId)}
 		src={`/items/${fileName}.png`}
 		alt={name}
@@ -25,9 +25,15 @@
 </div>
 	{:else}
 		<img
-				class={` absolute ${fileName} item`}
+				class={` absolute ${fileName} item brightness `}
 				on:click={() => onClick(itemId)}
 				src={`/items/${fileName}.png`}
 				alt={name}
 		/>
 {/if}
+
+<style>
+	.brightness{
+		filter: drop-shadow(-2px -2px 4px #BEBEBE);
+	}
+</style>
