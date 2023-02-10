@@ -2,7 +2,7 @@
 </script>
 
 
-<div class="background p-5 relative">
+<body class="background p-5 relative ">
 	<div class="flex justify-end">
 		<img src="/assets/madame-home.png" class=" w-[80%]"/>
 	</div>
@@ -10,19 +10,19 @@
 		Embrouille au musee
 	</h1>
 	<img src="/assets/heritier-home.png" class="w-[80%]"/>
-	<img src="/assets/alfred-home.png" class="w-[80%] absolute right-2 bottom-36"/>
+	<div class="flex justify-end">
+		<img src="/assets/alfred-home.png" class="w-[80%]"/>
+	</div>
 	<div class="fixed bottom-10 left-1/2 -translate-x-1/2 w-60">
 		<a href="/home" class=" flex justify-center text-text font-button px-6 py-3 rounded-md bg-background ">
 		Commencer la visite
 		</a>
 	</div>
-</div>
+</body>
 
 <style>
 	.background {
 		background-image: url("/assets/bg-home.png");
-		background-size: contain;
-		width: 100vw;
-		height: 100vh;
+		background-size: cover;
 	}
 </style>
