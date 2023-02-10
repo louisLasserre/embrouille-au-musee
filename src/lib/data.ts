@@ -48,7 +48,7 @@ export const paintingsData: IPaintingsData[] = [
     itemId: 2,
     clueCollect: "Que fait cette feuille sur ma tête ?!",
     clueReturn:"Partez à la recherche de mon ravissant chapeau !",
-    transcription: "Eh vous là ! Oui vous, regardez-moi, ne suis-je pas sublime ? Mon peintre, Guillaume Alaux, a parfaitement su retranscrire ma beauté ! Ce jour-là, je portais mon ravissant chape… Mais … MON CHAPEAUX A DISPARU ! Et puis, que fait ce vieux truc sur ma figure ! C’est ridicule, je ne suis plus écolière ! Je suis sûre que c’est une affaire de ce prétentieux narcissique Alfred Roll, c’est tout à fait son style ! Visiteur, partez diligemment à sa recherche, retirez-moi ce testament de la tête, je ne peux pas sortir en cheveux, c’est indécent !",
+    transcription: "Eh vous là ! Oui vous, regardez-moi, ne suis-je pas sublime ? Mon peintre, Guillaume Alaux, a parfaitement su retranscrire ma beauté ! Ce jour-là, je portais mon ravissant chape… Mais … MON CHAPEAU A DISPARU ! Et puis, que fait ce vieux truc sur ma figure ! C’est ridicule, je ne suis plus écolière ! Je suis sûre que c’est une affaire de ce prétentieux narcissique Alfred Roll, c’est tout à fait son style ! Visiteur, partez diligemment à sa recherche, retirez-moi ce testament de la tête, je ne peux pas sortir en cheveux, c’est indécent !",
     missingItemId: 3,
     reactionVideos: [
       {
@@ -72,7 +72,7 @@ export const paintingsData: IPaintingsData[] = [
     itemId: 3,
     clueCollect: "Ce chapeau hideux ne m’appartient pas !",
     clueReturn:"Dépêchez vous de retrouver mon foulard !",
-    transcription: "MISÉCORDE ! Tout doit être parfait ! le visiteur ne doit pas voir que mon foulard a disparu… Et ce chapeau, que fait-il sur moi ? Quelle faute de goût ! Sous leurs airs pleurnichards, ne serait-ce pas les Héritiers qui convoitent mon foulard pour en faire un mouchoir ?!  Oh vous qui êtes là ! Hâter vous de redorer mon image ! Et par la même occasion, ôtez-moi cet affreux chapeau !",
+    transcription: "MISÉCORDE ! Tout doit être parfait ! le visiteur ne doit pas voir que mon foulard a disparu… Et ce chapeau, que fait-il sur moi ? Quelle faute de goût ! Sous leurs airs pleurnichards, ne serait-ce pas les Héritiers qui convoitent mon foulard pour en faire un mouchoir ?!  Oh vous qui êtes là ! Hâtez vous de redorer mon image ! Et par la même occasion, ôtez-moi cet affreux chapeau !",
     missingItemId: 1,
     reactionVideos: [
       {
