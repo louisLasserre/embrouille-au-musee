@@ -8,7 +8,7 @@
 	const playpauseclick = () => {
 		const video: HTMLVideoElement | null = document.querySelector('#video');
 		const controlLogo: HTMLElement | null = document.querySelector('#controlsLogo');
-
+		handleLoading(video);
 		if (!video) {
 			console.error('VideoPlayer: video not found');
 			return;
@@ -19,6 +19,11 @@
 		} else {
 			pause(video);
 		}
+	};
+	const handleLoading = (video: HTMLVideoElement) => {
+		video.addEventListener('waiting', () => {
+			console.log('waiting');
+		});
 	};
 
 	const play = (video: HTMLVideoElement) => {
