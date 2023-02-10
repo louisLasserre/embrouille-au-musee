@@ -48,6 +48,7 @@
 	};
 
 	const handleClick = (itemId: IItemData['id']) => {
+		alert('indice')
 		if ($exploringMode === 'getItems' && !$items.includes(itemId)) {
 			getItems(itemId);
 		}
@@ -71,6 +72,7 @@
 			startChildVideo('cluePlaceItems');
 		}
 	};
+
 </script>
 
 <div class="h-screen w-screen bg-background">

@@ -12,30 +12,18 @@
 
 	const poster = `/paintings/${fileName}.jpg`;
 	const source = [`/videos/${fileName}.mp4`];
-	const videoHeight = window.innerHeight;
-	const videoWidth = window.innerWidth;
+
 	let isActive: boolean = false;
 	const modalText =
-		"Cliquez sur le bouton 'explorer l’œuvre' pour observer les peintures. Le but est que vous retrouviez les différences entre les peintures originelles et le tableau affiché sur votre téléphone. ";
-
+		"Cliquez sur le bouton <span class='font-button'>explorer l’œuvre</span> pour observer les peintures. Le but est que vous retrouviez les <span class='font-button'>différences</span> entre les peintures originelles et le tableau affiché sur votre téléphone. ";
+	const modalTitle = 'Comment jouer ?'
 	let IsShowMore: boolean = false;
 	const showMore = () => {
 		IsShowMore = !IsShowMore;
 	};
-	onMount(() => {
-		setTimeout(() => {
-			const video: HTMLVideoElement | null = document.querySelector('#videoContainer video');
-			if (!video) {
-				return;
-			}
-			video.preload = 'auto';
-			video.playsInline = true;
-		}, 15);
-
-		// video.autoplay = true;
-		// video.classList.add('test');
-	});
 </script>
+
+<svelte:window bind:innerHeight={videoHeight} bind:innerWidth={videoWidth} />
 
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
 	<div id="videoContainer" class="h-full w-full absolute overflow-hidden">
@@ -72,7 +60,7 @@
 				on:click={() => (isActive = true)}>?</button
 			>
 
-			<Modal bind:isActive text={modalText} />
+			<Modal bind:isActive text={modalText} title={modalTitle} />
 			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
 		</div>
 	</article>
