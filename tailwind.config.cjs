@@ -11,7 +11,7 @@ module.exports = {
         buttonDisabled: '#CC6952'
       },
       fontFamily: {
-        title: 'ClassicalRomance',
+        title: ['ClassicalRomance, Serif, palatino, PT Mono, Didot'],
         text: 'Raleway-Regular',
         textTrans: 'Raleway-Italic',
         button: 'Raleway-Bold',
