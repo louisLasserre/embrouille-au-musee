@@ -2,7 +2,7 @@
 </script>
 
 
-<body class="background p-5 relative ">
+<body class="background p-5 relative overflow-auto">
 	<div class="flex justify-end">
 		<img src="/assets/madame-home.png" class=" w-[80%]"/>
 	</div>
@@ -23,6 +23,8 @@
 <style>
 	.background {
 		background-image: url("/assets/bg-home.png");
-		background-size: cover;
+		background-size: contain;
+		background-attachment: fixed;
+		height: 100vh;
 	}
 </style>
