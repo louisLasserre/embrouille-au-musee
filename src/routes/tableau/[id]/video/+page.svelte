@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from 'src/components/Button.svelte';
+	import VideoPlayer from 'src/components/VideoPlayer.svelte';
 
 	import type { PageData } from '../$types';
 
@@ -16,22 +17,15 @@
 	let isActive: boolean = false;
 	const modalText =
 		"Cliquez sur le bouton <span class='font-button'>explorer l’œuvre</span> pour observer les peintures. Le but est que vous retrouviez les <span class='font-button'>différences</span> entre les peintures originelles et le tableau affiché sur votre téléphone. ";
-	const modalTitle = 'Comment jouer ?'
+	const modalTitle = 'Comment jouer ?';
 	let IsShowMore: boolean = false;
 	const showMore = () => {
 		IsShowMore = !IsShowMore;
 	};
 </script>
 
-
-
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
-	<div id="videoContainer" class="h-full w-full absolute overflow-hidden">
-		<!-- video -->
-	</div>
-	<div class="h-full w-full absolute overflow-hidden pointer-events-none">
-		<div class="gradient" />
-	</div>
+	<VideoPlayer src={source} {poster} />
 
 	<article class="z-10  p-8 pt-0">
 		<h1 class="text-background text-titlePainting">{name}</h1>
@@ -65,17 +59,3 @@
 		</div>
 	</article>
 </div>
-
-<style>
-	.gradient {
-		height: 100%;
-		width: 100%;
-		background: rgb(17, 17, 17);
-		background: linear-gradient(
-			0deg,
-			rgba(17, 17, 17, 1) 0%,
-			rgba(32, 32, 32, 1) 10%,
-			transparent 100%
-		);
-	}
-</style>
