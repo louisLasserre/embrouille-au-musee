@@ -3,8 +3,6 @@
 	export let disabled: boolean;
 	export let className: string;
 
-	alert(url)
-
 	let buttonStyle = 'w-48 text-background text-center font-button px-6 py-3 rounded-md bg-button';
 	let disabledStyle = 'w-48 text-background text-center font-button px-6 py-3 rounded-md bg-buttonDisabled';
 

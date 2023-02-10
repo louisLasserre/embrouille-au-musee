@@ -23,7 +23,7 @@
 	};
 </script>
 
-<svelte:window bind:innerHeight={videoHeight} bind:innerWidth={videoWidth} />
+
 
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
 	<div id="videoContainer" class="h-full w-full absolute overflow-hidden">

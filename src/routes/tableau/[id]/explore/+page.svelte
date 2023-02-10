@@ -48,11 +48,11 @@
 	};
 
 	const handleClick = (itemId: IItemData['id']) => {
-		alert('indice')
 		if ($exploringMode === 'getItems' && !$items.includes(itemId)) {
 			getItems(itemId);
 		}
 	};
+
 	function getItems(id: IItemData['id']) {
 		items.update((items) => {
 			items.push(id);
