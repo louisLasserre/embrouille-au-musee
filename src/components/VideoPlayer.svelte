@@ -55,7 +55,7 @@
 <div id="videoContainer" class="h-full w-full absolute overflow-hidden">
 	<video id="video" {src} playsinline preload="auto" {poster} />
 	<div class="gradient" />
-	<button class="controls" on:click={playpauseclick}>
+	<div class="controls" on:click={playpauseclick}>
 		<div class="w-20 aspect-square relative">
 			<img
 				id="controlsLogo"
@@ -66,7 +66,7 @@
 				<span />
 			</div>
 		</div>
-	</button>
+	</div>
 </div>
 
 <style>
