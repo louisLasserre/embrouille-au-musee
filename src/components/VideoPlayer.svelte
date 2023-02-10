@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte';
+
 	export let src: HTMLVideoElement['src'];
 	export let poster: HTMLVideoElement['poster'];
 
