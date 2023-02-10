@@ -25,12 +25,10 @@
 	};
 	const handleLoading = (video: HTMLVideoElement) => {
 		video.addEventListener('waiting', () => {
-			console.log('waiting');
 			loadingStatus = true;
 		});
 
 		video.addEventListener('canplay', () => {
-			console.log('canplay');
 			loadingStatus = false;
 		});
 	};
