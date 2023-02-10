@@ -27,9 +27,12 @@ h6 {
   @apply w-full object-contain relative
 }
 
-.controls {
-  display: none !important;
-}
+/* VideoPlayer */
+
+/*----- VideoPlayer -----*/
+
+
+
 
 
 @font-face {
