@@ -1,6 +1,4 @@
 <script lang="ts">
-	import VideoPlayer from 'svelte-video-player';
-
 	import Button from 'src/components/Button.svelte';
 
 	import type { PageData } from '../$types';
@@ -41,16 +39,7 @@
 
 <div class="h-[100vh] relative flex flex-col justify-end bg-black">
 	<div id="videoContainer" class="h-full w-full absolute overflow-hidden">
-		<VideoPlayer
-			{poster}
-			{source}
-			height={videoHeight}
-			width={videoWidth}
-			borderRadius="0"
-			controlsOnPause={true}
-			thumbSize="0"
-			color="#FF8367"
-		/>
+		<!-- video -->
 	</div>
 	<div class="h-full w-full absolute overflow-hidden pointer-events-none">
 		<div class="gradient" />
