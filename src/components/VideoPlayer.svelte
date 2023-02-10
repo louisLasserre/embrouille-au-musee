@@ -24,6 +24,15 @@
 		video.addEventListener('waiting', () => {
 			console.log('waiting');
 		});
+		video.addEventListener('loadeddata', () => {
+			console.log('loadeddata');
+		});
+		video.addEventListener('canplay', () => {
+			console.log('canplay');
+		});
+		video.addEventListener('playing', () => {
+			console.log('playing');
+		});
 	};
 
 	const play = (video: HTMLVideoElement) => {
