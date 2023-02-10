@@ -28,7 +28,7 @@
 	<VideoPlayer src={source} {poster} />
 
 	<article class="z-10  p-8 pt-0">
-		<h1 class="text-background text-titlePainting">{name}</h1>
+		<h1 class="text-background font-titlePainting uppercase italic text-titlePainting">{name}</h1>
 		<p class="text-background font-texts font-light ml-4">{description}</p>
 
 		<div class="flex flex-col min-w-0 items-start my-6 {IsShowMore ? 'backdrop-blur-sm' : ''}">
