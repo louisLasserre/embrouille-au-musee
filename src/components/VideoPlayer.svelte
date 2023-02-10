@@ -4,15 +4,16 @@
 
 	type TvideoStatus = 'play' | 'paused';
 	let videoStatus: TvideoStatus = 'paused';
+	let loadingStatus = false;
 
 	const playpauseclick = () => {
 		const video: HTMLVideoElement | null = document.querySelector('#video');
 		const controlLogo: HTMLElement | null = document.querySelector('#controlsLogo');
-		handleLoading(video);
 		if (!video) {
 			console.error('VideoPlayer: video not found');
 			return;
 		}
+		handleLoading(video);
 		controlLogo?.classList.toggle('active');
 		if (video.paused) {
 			play(video);
@@ -23,15 +24,12 @@
 	const handleLoading = (video: HTMLVideoElement) => {
 		video.addEventListener('waiting', () => {
 			console.log('waiting');
+			loadingStatus = true;
 		});
-		video.addEventListener('loadeddata', () => {
-			console.log('loadeddata');
-		});
+
 		video.addEventListener('canplay', () => {
 			console.log('canplay');
-		});
-		video.addEventListener('playing', () => {
-			console.log('playing');
+			loadingStatus = false;
 		});
 	};
 
@@ -50,18 +48,24 @@
 		}
 		return 'pause.svg';
 	};
+
+	$: loadingState = loadingStatus;
 </script>
 
 <div id="videoContainer" class="h-full w-full absolute overflow-hidden">
 	<video id="video" {src} playsinline preload="auto" {poster} />
 	<div class="gradient" />
 	<button class="controls" on:click={playpauseclick}>
-		<div class="w-20">
+		<div class="w-20 aspect-square relative">
+			{loadingState}
 			<img
 				id="controlsLogo"
 				class="text-purple-50 object-contain w-full"
 				src={`/icons/${controlIcon()}`}
 			/>
+			<div class={`loader-2 ${loadingState ? 'active' : ''}`}>
+				<span />
+			</div>
 		</div>
 	</button>
 </div>
@@ -91,5 +95,11 @@
 	:global(#controlsLogo) {
 		opacity: 1;
 		transition: all 0.3s linear;
+	}
+	:global(.loader-2) {
+		display: none;
+	}
+	:global(.loader-2.active) {
+		display: block;
 	}
 </style>
