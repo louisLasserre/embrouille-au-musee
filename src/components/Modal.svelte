@@ -20,7 +20,7 @@
 			<p class="font-button">{title}</p>
 			<p>{@html text}</p>
 		{:else}
-			<p class="font-bold">Indice :</p>
+			<p class="font-button">Indice :</p>
 			{#if $exploringMode == 'getItems'}
 				<p class="italic">"{paintingsData[PageId - 1].clueCollect}"</p>
 			{:else if $exploringMode == 'placeItems'}
