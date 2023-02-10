@@ -10,7 +10,7 @@
 
 		endPageData = {
 			title: 'BRAVO !',
-			description: "Vous avez trouvé tous les objets en trop. Il vous reste à <span class='text-textDark font-medium'>remettre les objets au bon propriétaire</span>, pour cela rendez-vous devant le tableau <span class='text-textDark font-medium'>''Les héritiers'' </span>. Une fois que vous y êtes, appuyez sur le bouton <span class='text-textDark font-medium'>''J'y suis'</span> !",
+			description: "Vous avez trouvé tous les objets en trop. Il vous reste à <span class='font-button'>remettre les objets au bon propriétaire</span>, pour cela rendez-vous devant le tableau <span class='font-button'>''Les héritiers''</span>. Une fois que vous y êtes, appuyez sur le bouton <span class='font-button'>''J'y suis'</span> !",
 			button: {
 				url: '/tableau/1/explore',
 				text: "J'y suis"
@@ -21,7 +21,7 @@
 		$actualPaintingIndex = 0;
 		endPageData = {
 			title: 'FÉLICITATIONS !',
-			description: 'Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. <br> <br> Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !”',
+			description: 'Vous avez réussi à remettre en ordre tout les tableaux, ils ont l’air de meilleure humeur maintenant. Je vais vous dire un secret mais ça reste entre nous hein! C’est moi qui ai mélangé tous leurs objets. Il faut bien ajouter un peu d’animation dans ce musée !”',
 			button: {
 				url: '/',
 				text: "Quitter l'expèrience"
@@ -32,14 +32,19 @@
 	const { title, description, button } = endPageData;
 	const { url, text } = button;
 </script>
-<body class="bg-background h-screen z-0 relative">
-	<div class="flex justify-center flex-col text-center pl-8 pr-8 gap-8 z-50">
-		<img src="/icons/fond_item.png" class="absolute z-[-1] opacity-50 left-0 top-64 w-fit">
-		<h1 class="font-title text-title m-0 p-0">{title}</h1>
-		<p class="text-text text-left ">{@html description}</p>
-		<img src="/paintings/les-heritiers.jpeg" class="w-fit top-72 pl-8 pr-8">
+<body class="bg-background h-screen z-0 relative no-scrollbar">
+	<div class="flex justify-center flex-col text-center z-50">
+		<h1 class="font-title text-title py-5">{title}</h1>
+		<p class="font-text text-left px-5">{@html description}</p>
+		<div class="relative mt-5">
+			<img src="/paintings/les-heritiers.jpeg" class="w-auto left-1/2 -translate-x-1/2 absolute top-1/2 -translate-y-1/2  h-2/3 z-10 rounded-md " />
+			<img src="/assets/fond-finding.png" class=" z-0" />
+		</div>
 		
-		<Button {url} id="btn">{text}</Button>
+		<Button {url} id="btn" className="fixed bottom-10 left-1/2 -translate-x-1/2 z-20">
+			{text}
+		</Button>
 	</div>
 
 </body>
+

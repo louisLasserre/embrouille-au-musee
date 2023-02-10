@@ -34,18 +34,18 @@
 		<div class="flex flex-col min-w-0 items-start my-6 {IsShowMore ? 'backdrop-blur-sm' : ''}">
 			{#if IsShowMore}
 				<p
-					class="font-textTrans transition-all max-h-[2rem] text-background {!IsShowMore
+					class="font-textTrans transition-all text-background {!IsShowMore
 						? 'whitespace-nowrap '
-						: 'max-h-[17rem]'}"
+						: 'max-h-full'}"
 				>
-					Transcription : "{transcription}"
+					Transcription : " {transcription} "
 				</p>
 			{/if}
 			<button
 				class="underline text-background whitespace-nowrap underline mt-5"
 				on:click={() => showMore()}
 			>
-				{IsShowMore ? 'Retour à la vidéo' : 'Je ne peux pas écouter la vidéo'}
+				{IsShowMore ? 'Fermer' : 'Transcription'}
 			</button>
 		</div>
 		<div class="w-fit mx-auto flex gap-6 items-center">

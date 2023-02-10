@@ -18,6 +18,9 @@
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">C'est parti !</h1>
 	{:else}
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">Au suivant !</h1>
+	{/if}
+
+	{#if $exploringMode === 'getItems' && $items.length > 0}
 		<p class="text-textDark uppercase font-medium text-center mt-3">Vous avez trouvé {$items.length} sur 3 objets !</p>
 	{/if}
 	
@@ -28,8 +31,8 @@
 		<span class="font-button">“J’y suis”</span>
 		pour commencer !
 	</p>
-	<div class="relative border-2 ">
-		<img src="/paintings/{src}" class="p-10 absolute top-1/2 -translate-y-1/2  h-auto z-10 rounded-md " />
+	<div class="relative ">
+		<img src="/paintings/{src}" class="w-auto left-1/2 -translate-x-1/2 absolute top-1/2 -translate-y-1/2  h-2/3 z-10 rounded-md " />
 		<img src="/assets/fond-finding.png" class=" z-0" />
 	</div>
 
