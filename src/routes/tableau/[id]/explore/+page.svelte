@@ -53,9 +53,11 @@
 		}
 	};
 	function getItems(id: IItemData['id']) {
-		$items = [...$items, id];
+		items.update((items) => {
+			items.push(id);
+			return items;
+		});
 	}
-
 	let hasPlacedItem = false;
 	const HasPlacedItem = () => {
 		startChildVideo('placedItems');
