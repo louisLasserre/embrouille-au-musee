@@ -57,7 +57,6 @@
 	<div class="gradient" />
 	<button class="controls" on:click={playpauseclick}>
 		<div class="w-20 aspect-square relative">
-			{loadingState}
 			<img
 				id="controlsLogo"
 				class="text-purple-50 object-contain w-full"
