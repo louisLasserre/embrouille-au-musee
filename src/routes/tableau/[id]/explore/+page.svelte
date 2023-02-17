@@ -11,6 +11,9 @@
 	import type { PageData } from '../$types';
 	import type { IItemData } from 'src/lib/items';
 	import ExploreReactions from 'src/components/ExploreReactions.svelte';
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
 
 	export let data: PageData;
 
@@ -75,7 +78,10 @@
 
 </script>
 
-<div class="h-screen w-screen bg-background">
+<svelte:window bind:innerWidth/>
+
+
+<body class="h-screen bg-background {widthContent}">
 	<div class="relative w-full h-3/5 overflow-hidden">
 		<Painting
 			src={`/${hasPlacedItem ? 'reelpaintings' : 'paintings'}/${fileName}.jpg`}
@@ -108,4 +114,4 @@
 		>
 	</div>
 	<Modal bind:isActive {PageId} />
-</div>
+</body>

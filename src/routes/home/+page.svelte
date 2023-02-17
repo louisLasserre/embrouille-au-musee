@@ -1,7 +1,14 @@
 <script>
 	import Button from "src/components/Button.svelte";
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
 </script>
-<body class="bg-background w-screen h-screen z-10 relative">
+
+<svelte:window bind:innerWidth/>
+
+
+<body class="bg-background z-10 relative {widthContent} h-screen">
 	<h1 class="text-center text-title text-textDark pt-10 pb-5 uppercase">
 		Bienvenue !
 	</h1>

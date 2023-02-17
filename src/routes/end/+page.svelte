@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Button from '../../components/Button.svelte';
 	import { actualPaintingIndex, exploringMode } from '../../stores';
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
 
 	let endPageData;
 
@@ -35,7 +38,10 @@
 	const { url, text } = button;
 </script>
 
-<body class="bg-background h-screen z-0 relative">
+<svelte:window bind:innerWidth/>
+
+
+<body class="bg-background h-screen z-0 relative {widthContent}">
 	<div class="flex justify-center flex-col text-center z-50">
 		<h1 class="font-title text-title py-5">{title}</h1>
 		<p class="font-text text-left px-5 italic">{@html description}</p>

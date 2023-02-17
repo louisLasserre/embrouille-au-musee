@@ -3,6 +3,10 @@
 	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
 	import { paintingsData } from 'src/lib/data.ts';
 
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
+
 	let nextPageType = 'video';
 
 	if ($exploringMode === 'placeItems') {
@@ -13,7 +17,9 @@
 	let paintingName = paintingsData[$actualPaintingIndex].name;
 </script>
 
-<div class="w-screen h-screen bg-background py-10 flex flex-col gap-6 justify-start">
+<svelte:window bind:innerWidth/>
+
+<body class=" bg-background py-10 flex flex-col gap-6 justify-start h-screen {widthContent}">
 	{#if $actualPaintingIndex === 0}
 		<h1 class="font-title text-title text-textDark flex justify-center uppercase">C'est parti !</h1>
 	{:else}
@@ -48,7 +54,7 @@
 		className="fixed bottom-10 left-1/2 -translate-x-1/2 z-20"
 		url="/tableau/{$actualPaintingIndex + 1}/{nextPageType}">J'y suis</Button
 	>
-</div>
+</body>
 
 <style>
 	.find-painting {

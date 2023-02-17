@@ -1,8 +1,12 @@
 <script>
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
+
 	const data = [
 		{
 			name: 'Auréliane Dor',
-			network: 'https://github.com/AurelianeD',
+			network: 'https://www.linkedin.com/in/aur%C3%A9liane-dor-992967200/',
 			img: '/pictures/aureliane.png'
 		},
 		{
@@ -28,8 +32,9 @@
 	]
 </script>
 
+<svelte:window bind:innerWidth/>
 
-<div>
+<div class="{widthContent} bg-background">
 	<h1 class="text-center font-title text-title uppercase py-10">Crédits</h1>
 	<p class="text-center text-text font-text">
 		L'équipe derrière

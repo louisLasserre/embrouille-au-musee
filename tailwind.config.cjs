@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         button: "#FF8367",
         background: "#FFEAD6",
+        backgroundDark: "#cea68c",
         textLightDisabled :"#CCBBAB",
         textDark: '#121F30',
         buttonDisabled: '#CC6952'

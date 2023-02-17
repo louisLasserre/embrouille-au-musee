@@ -6,6 +6,9 @@
 
 	import Modal from 'src/components/Modal.svelte';
 	import { onMount } from 'svelte';
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
 
 	export let data: PageData;
 
@@ -24,7 +27,10 @@
 	};
 </script>
 
-<div class="h-[100vh] relative flex flex-col justify-end bg-black">
+<svelte:window bind:innerWidth/>
+
+
+<body class="h-[100vh] relative flex flex-col justify-end bg-black {widthContent}">
 	<VideoPlayer src={source} {poster} />
 
 	<article class="z-10  p-8 pt-0">
@@ -58,4 +64,4 @@
 			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
 		</div>
 	</article>
-</div>
+</body>

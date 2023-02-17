@@ -1,8 +1,12 @@
 <script>
+	let innerWidth = 0;
+	$: isMobile = innerWidth < 768;
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
 </script>
 
+<svelte:window bind:innerWidth/>
 
-<body class="background p-5 relative overflow-auto">
+<body class="background p-5 relative overflow-auto {widthContent}">
 	<div class="flex justify-end">
 		<img src="/assets/madame-home.png" class=" w-[80%]"/>
 	</div>
