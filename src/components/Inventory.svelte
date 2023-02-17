@@ -3,7 +3,6 @@
 	import { paintingsData } from 'src/lib/data';
 	import Item from './Item.svelte';
 	import type { IItemData } from 'src/lib/items';
-	import {onMount} from "svelte";
 
 	export let missingItemId: IItemData['id'];
 	export let itemId: IItemData['id'];
