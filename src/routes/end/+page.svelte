@@ -72,5 +72,15 @@
 		>
 			{text}
 		</Button>
+
+		{#if $exploringMode !== 'placeItems'}
+			<a
+					href="/credits"
+					class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20"
+			>
+				Crédits
+			</a>
+		{/if}
+
 	</div>
 </body>
