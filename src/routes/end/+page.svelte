@@ -26,7 +26,7 @@
 		endPageData = {
 			title: 'FÉLICITATIONS !',
 			description:
-				'Vous avez réussi à <span class="font-button">remettre en ordre</span> tout les tableaux, ils ont l’air de <span class="font-button">meilleure humeur</span> maintenant. Je vais vous dire un <span class="font-button">secret</span> mais ça reste entre nous hein! C’est moi qui ai <span class="font-button">mélangé</span> tous leurs objets.”',
+				'Vous avez réussi à <span class="font-button">remettre en ordre</span> tous les tableaux, ils ont l’air de <span class="font-button">meilleure humeur</span> maintenant. Je vais vous dire un <span class="font-button">secret</span> mais ça reste entre nous hein! C’est moi qui ai <span class="font-button">mélangé</span> tous leurs objets.”',
 			button: {
 				url: '/',
 				text: "Quitter l'expérience"
@@ -38,8 +38,7 @@
 	const { url, text } = button;
 </script>
 
-<svelte:window bind:innerWidth/>
-
+<svelte:window bind:innerWidth />
 
 <body class="bg-background h-screen z-0 relative {widthContent}">
 	<div class="flex justify-center flex-col text-center z-50">
@@ -58,7 +57,7 @@
 				<div class="px-5 absolute top-1/2 -translate-y-1/2">
 					<p class="font-text">
 						L’équipe derrière <span class="font-button">EMBROUILLE AU MUSÉE</span> vous remercie d’avoir
-						participé et espère que vous avez passer un bon moment !
+						participé et espère que vous avez passé un bon moment !
 					</p>
 				</div>
 				<img src="/assets/fond-finding.png" class="z-0" />
@@ -74,13 +73,9 @@
 		</Button>
 
 		{#if $exploringMode !== 'placeItems'}
-			<a
-					href="/credits"
-					class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20"
-			>
+			<a href="/credits" class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20">
 				Crédits
 			</a>
 		{/if}
-
 	</div>
 </body>

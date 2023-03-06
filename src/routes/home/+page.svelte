@@ -1,24 +1,29 @@
 <script>
-	import Button from "src/components/Button.svelte";
+	import Button from 'src/components/Button.svelte';
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
-	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
 </script>
 
-<svelte:window bind:innerWidth/>
-
+<svelte:window bind:innerWidth />
 
 <body class="bg-background z-10 relative {widthContent} h-screen">
-	<h1 class="text-center text-title text-textDark pt-10 pb-5 uppercase">
-		Bienvenue !
-	</h1>
-	<img src="/assets/fond_home.png" class="z-[-1] absolute top-0"/>
+	<h1 class="text-center text-title text-textDark pt-10 pb-5 uppercase">Bienvenue !</h1>
+	<img src="/assets/fond_home.png" class="z-[-1] absolute top-0" />
 	<p class="px-5 text-textDark text-text font-text leading-5 italic">
-		Guide : “ Bonjour et bienvenue au <span class="font-button">Musée des Beaux-Arts de Bordeaux</span> ! Commençons la visite sans plus tarder ! Mais… Attendez ! Où est passé le <span class="font-button">testament</span> du tableau <span class="font-button">“Les Héritiers”</span> ?
-		Et que sont devenus le <span class="font-button">chapeau</span> de Madame Samazeuil et le <span class="font-button">foulard</span> d'Alfred Roll !
-		Je ne peux pas commencer la visite dans ces conditions.
-		S’il vous plaît retrouvez les <span class="font-button">objets intrus</span> et <span class="font-button">restituez-les</span> au bon endroit ! "
-		
+		Guide : “ Bonjour et bienvenue au <span class="font-button"
+			>Musée des Beaux-Arts de Bordeaux</span
+		>
+		! Commençons la visite sans plus tarder ! Mais… Attendez ! Où est passé le
+		<span class="font-button">testament</span>
+		du tableau <span class="font-button">“Les Héritiers” d’Eugène Buland</span> ? Et que sont
+		devenus le <span class="font-button">chapeau</span> de Madame Samazeuil et le
+		<span class="font-button">foulard</span>
+		d'Alfred Roll ?! Je ne peux pas commencer la visite dans ces conditions. S’il vous plaît retrouvez
+		les <span class="font-button">objets perdus</span> ou bien trouvez les
+		<span class="font-button">objets intrus</span>; de même
+		<span class="font-button"> restituez-les</span> aux bons personnages ou bien
+		<span class="font-button">replacez-les</span> au bon endroit ! "
 	</p>
 	<div class="flex justify-center">
 		<img src="/assets/paintings-all.png" />

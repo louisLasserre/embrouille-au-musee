@@ -5,7 +5,7 @@
 
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
-	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
+	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
 
 	let nextPageType = 'video';
 
@@ -15,9 +15,10 @@
 
 	let src = paintingsData[$actualPaintingIndex].fileName + '.jpeg';
 	let paintingName = paintingsData[$actualPaintingIndex].name;
+	let paintingDescription = paintingsData[$actualPaintingIndex].description;
 </script>
 
-<svelte:window bind:innerWidth/>
+<svelte:window bind:innerWidth />
 
 <body class=" bg-background py-10 flex flex-col gap-6 justify-start h-screen {widthContent}">
 	{#if $actualPaintingIndex === 0}
@@ -34,7 +35,7 @@
 
 	<p class="text-textDark text-text font-text px-10">
 		Digirez-vous devant le tableau
-		<span class="font-button">{paintingName}</span>
+		<span class="font-textTrans">{paintingName}</span> de {paintingDescription}
 		avec votre téléphone en main et appuyez sur le bouton
 		<span class="font-button">“J’y suis”</span>
 		pour commencer !
