@@ -35,7 +35,9 @@
 
 	<p class="text-textDark text-text font-text px-10">
 		Digirez-vous devant le tableau
-		<span class="font-textTrans">{paintingName}</span> de {paintingDescription}
+		<span class="font-button">
+			<span class="italic">{paintingName}</span> de {paintingDescription}
+		</span>
 		avec votre téléphone en main et appuyez sur le bouton
 		<span class="font-button">“J’y suis”</span>
 		pour commencer !

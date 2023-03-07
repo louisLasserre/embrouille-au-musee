@@ -16,14 +16,12 @@
 		>
 		! Commençons la visite sans plus tarder ! Mais… Attendez ! Où est passé le
 		<span class="font-button">testament</span>
-		du tableau <span class="font-button">“Les Héritiers” d’Eugène Buland</span> ? Et que sont
+		du tableau <span class="font-button not-italic">“Les Héritiers”</span> d’Eugène Buland ? Et que sont
 		devenus le <span class="font-button">chapeau</span> de Madame Samazeuil et le
 		<span class="font-button">foulard</span>
 		d'Alfred Roll ?! Je ne peux pas commencer la visite dans ces conditions. S’il vous plaît retrouvez
-		les <span class="font-button">objets perdus</span> ou bien trouvez les
-		<span class="font-button">objets intrus</span>; de même
-		<span class="font-button"> restituez-les</span> aux bons personnages ou bien
-		<span class="font-button">replacez-les</span> au bon endroit ! "
+		les <span class="font-button">objets perdus</span>
+		<span class="font-button">et restituez-les aux bons personnages</span> ! "
 	</p>
 	<div class="flex justify-center">
 		<img src="/assets/paintings-all.png" />

@@ -69,7 +69,7 @@ export const paintingsData: IPaintingsData[] = [
     ]
   },
   {
-    name: "Alfred Roll autoportrait",
+    name: "Autoportrait",
     description: "Alfred Roll - 1885",
     fileName: "alfred-roll",
     itemId: 3,
