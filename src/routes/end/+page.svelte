@@ -62,6 +62,9 @@
 				</div>
 				<img src="/assets/fond-finding.png" class="z-0" />
 			</div>
+			<a href="/credits" class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20">
+				Crédits
+			</a>
 		{/if}
 
 		<Button
@@ -72,10 +75,6 @@
 			{text}
 		</Button>
 
-		{#if $exploringMode !== 'placeItems'}
-			<a href="/credits" class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20">
-				Crédits
-			</a>
-		{/if}
+
 	</div>
 </body>

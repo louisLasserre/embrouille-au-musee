@@ -7,27 +7,32 @@
 		{
 			name: 'Auréliane Dor',
 			network: 'https://www.linkedin.com/in/aur%C3%A9liane-dor-992967200/',
+			role: 'Développement',
 			img: '/pictures/aureliane.png'
 		},
 		{
 			name: 'Bastien Garnier',
 			network: 'https://www.linkedin.com/in/bastiengarnier19/',
-			img: '/pictures/bastien.png'
+			img: '/pictures/bastien.png',
+			role: 'Animation / Monteur Vidéo'
 		},
 		{
 			name: 'Emma Guillaume',
 			network: 'https://www.linkedin.com/in/emma-guillaume-7122a6202/',
-			img: '/pictures/emma.png'
+			img: '/pictures/emma.png',
+			role: 'Developpement / Design'
 		},
 		{
 			name: 'Louis Lasserre',
 			network: 'https://www.linkedin.com/in/louis-lasserre-0a8308222/',
-			img: '/pictures/louis.png'
+			img: '/pictures/louis.png',
+			role: "Développement"
 		},
 		{
 			name: 'Safiya Seddiki',
 			network: 'https://www.linkedin.com/in/safiya-seddiki/',
-			img: '/pictures/safiya.png'
+			img: '/pictures/safiya.png',
+			role: 'Rédaction / Design'
 		}
 	]
 </script>
@@ -35,6 +40,7 @@
 <svelte:window bind:innerWidth/>
 
 <div class="{widthContent} bg-background">
+	<a href="/end">retour</a>
 	<h1 class="text-center font-title text-title uppercase py-10">Crédits</h1>
 	<p class="text-center text-text font-text">
 		L'équipe derrière
