@@ -19,12 +19,18 @@
 
 	let isActive: boolean = false;
 	const modalText =
-		"Cliquez sur le bouton <span class='font-button'>explorer l’œuvre</span> pour observer les peintures. Le but est que vous retrouviez les <span class='font-button'>différences</span> entre les peintures originelles et le tableau affiché sur votre téléphone. ";
+		"Cliquez sur le bouton <span class='font-button'>explorer l’œuvre</span> pour observer les peintures. Le but est de retrouver les <span class='font-button'>différences</span> entre les peintures originales et le tableau affiché sur votre téléphone. ";
 	const modalTitle = 'Comment jouer ?';
 	let IsShowMore: boolean = false;
 	const showMore = () => {
 		IsShowMore = !IsShowMore;
 	};
+
+	const showModalHelp = () => {
+		isActive = true;
+		return isActive;
+	};
+
 </script>
 
 <svelte:window bind:innerWidth/>
@@ -54,14 +60,10 @@
 				{IsShowMore ? 'Fermer' : 'Transcription'}
 			</button>
 		</div>
-		<div class="w-fit mx-auto flex gap-6 items-center">
-			<button
-				class="bg-button font-title text-background px-[0.9rem] aspect-square rounded-md text-[22px]"
-				on:click={() => (isActive = true)}>?</button
-			>
-
+		<div class="w-fit mx-auto flex gap-2 items-center">
+			<Button isButtonHelp={true} onClick={() => showModalHelp()}>Comment jouer ?</Button>
+			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre !</Button>
 			<Modal bind:isActive text={modalText} title={modalTitle} />
-			<Button disabled={false} url="/tableau/{data.id}/explore">Explorer l'oeuvre</Button>
 		</div>
 	</article>
 </body>
