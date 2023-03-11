@@ -3,9 +3,21 @@
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
 	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
+
+	let srcs	= [
+			'/assets/paintings-all.png',
+			'/assets/fond_home.png',
+	]
+
 </script>
 
 <svelte:window bind:innerWidth />
+
+<svelte:head>
+	{#each srcs as src}
+		<link rel="preload" href={src} as="image" />
+	{/each}
+</svelte:head>
 
 <body class="bg-background z-10 relative {widthContent} h-screen">
 	<h1 class="text-center text-title text-textDark pt-10 pb-5 uppercase">Bienvenue !</h1>

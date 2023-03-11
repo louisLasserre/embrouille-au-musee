@@ -5,9 +5,7 @@
 	import Painting from 'src/components/Painting.svelte';
 	import Inventory from 'src/components/Inventory.svelte';
 	import ButtonIndice from 'src/components/ButtonIndice.svelte';
-
 	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
-
 	import type { PageData } from '../$types';
 	import type { IItemData } from 'src/lib/items';
 	import ExploreReactions from 'src/components/ExploreReactions.svelte';
@@ -110,8 +108,10 @@
 
 		<Inventory {missingItemId} placedItem={HasPlacedItem} {itemId} />
 
-		<Button {url} disabled={disabled()} className="flex justify-center py-5">Tableau suivant</Button
-		>
+		<Button {url} disabled={disabled()} className="flex justify-center py-5">
+			Tableau suivant
+		</Button>
 	</div>
+
 	<Modal bind:isActive {PageId} />
 </body>
