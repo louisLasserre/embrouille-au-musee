@@ -62,9 +62,12 @@
 				</div>
 				<img src="/assets/fond-finding.png" class="z-0" />
 			</div>
-			<a href="/credits" class="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20">
+			<Button
+					url="/credits"
+					className="fixed bottom-32 text-text underline left-1/2 -translate-x-1/2 z-20"
+			>
 				Crédits
-			</a>
+			</Button>
 		{/if}
 
 		<Button
