@@ -39,7 +39,7 @@
 
 <div class="{widthContent} bg-background p-5">
 	<h1 class="text-center font-title text-title uppercase py-10">Crédits</h1>
-	<img src="./static/pictures/baccanight-bloc-marque-v1.png" alt="logo baccanight" />
+	<img src="/pictures/baccanight-bloc-marque-v1.png" alt="logo baccanight" class="w-64 mx-8 mb-8" />
 	<p class="text-center text-text font-text" />
 	<p class="text-text font-text pb-5">Les oeuvres choisies sont les suivantes :</p>
 	<ul>
