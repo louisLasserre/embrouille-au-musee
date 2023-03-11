@@ -6,7 +6,13 @@
 	export let PageId: number;
 	export let text: string | null;
 	export let title: string | null;
+
+	let src = "/icons/close.png"
 </script>
+
+<svelte:head>
+	<link rel="preload" href={src} as="image" />
+</svelte:head>
 
 {#if isActive}
 	<section on:click={() => (isActive = false)} on:keydown />
@@ -14,7 +20,7 @@
 		class={' bg-background text-textDark  py-4 px-6 gap-2 flex flex-col rounded-md	w-80 font-text'}
 	>
 		<button on:click={() => (isActive = false)} class="absolute h-14 w-14 -right-7 -top-5">
-			<img src="/icons/close.png" />
+			<img {src} alt="croix" />
 		</button>
 		{#if text}
 			<p class="font-button">{title}</p>

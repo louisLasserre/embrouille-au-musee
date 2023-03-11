@@ -2,9 +2,22 @@
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
 	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0'
+
+	let srcs	= [
+		'/assets/madame-home.png',
+		'/assets/heritier-home.png',
+		'/assets/alfred-home.png',
+		'/assets/bg-home.png'
+	]
 </script>
 
 <svelte:window bind:innerWidth/>
+
+<svelte:head>
+	{#each	srcs as src}
+		<link rel="preload" href={src} as="image" />
+	{/each}
+</svelte:head>
 
 <body class="background p-5 relative overflow-auto {widthContent}">
 	<div class="flex justify-end">

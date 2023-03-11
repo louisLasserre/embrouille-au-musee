@@ -13,12 +13,24 @@
 		nextPageType = 'explore';
 	}
 
-	let src = paintingsData[$actualPaintingIndex].fileName + '.jpeg';
+	let srcPainting = '/paintings/' + paintingsData[$actualPaintingIndex].fileName + '.jpeg';
 	let paintingName = paintingsData[$actualPaintingIndex].name;
 	let paintingDescription = paintingsData[$actualPaintingIndex].description;
+
+	let srcs = [
+			srcPainting,
+		'/assets/fond-item2.png'
+	]
+	
 </script>
 
 <svelte:window bind:innerWidth />
+
+<svelte:head>
+	{#each	srcs as src}
+		<link rel="preload" href={src} as="image" />
+	{/each}
+</svelte:head>
 
 <body class=" bg-background py-10 flex flex-col gap-6 justify-start h-screen {widthContent}">
 	{#if $actualPaintingIndex === 0}
@@ -35,7 +47,9 @@
 
 	<p class="text-textDark text-text font-text px-10">
 		Digirez-vous devant le tableau
-		<span class="font-textTrans">{paintingName}</span> de {paintingDescription}
+		<span class="font-button">
+			<span class="italic">{paintingName}</span> de {paintingDescription}
+		</span>
 		avec votre téléphone en main et appuyez sur le bouton
 		<span class="font-button">“J’y suis”</span>
 		pour commencer !
@@ -43,8 +57,8 @@
 	<div class="relative find-painting w-full h-24 grid place-items-center">
 		<div class="w-2/3">
 			<img
-				src="/paintings/{src}"
-				alt=""
+				src={srcPainting}
+				alt={paintingDescription}
 				class="w-full object-contain z-10 rounded-md max-h-[50vh]"
 			/>
 		</div>
