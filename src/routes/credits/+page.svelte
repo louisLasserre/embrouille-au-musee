@@ -29,13 +29,14 @@
 			network: 'https://www.linkedin.com/in/safiya-seddiki/',
 			img: '/pictures/safiya.png'
 		}
-	]
+	];
 </script>
 
-<svelte:window bind:innerWidth/>
+<svelte:window bind:innerWidth />
 
 <div class="{widthContent} bg-background">
 	<h1 class="text-center font-title text-title uppercase py-10">Crédits</h1>
+	<img src="./static/pictures/baccanight-bloc-marque-v1.png" alt="logo baccanight" />
 	<p class="text-center text-text font-text">
 		L'équipe derrière
 		<span class="font-button">Embrouille au musée</span>
@@ -55,7 +56,7 @@
 </div>
 
 <style>
-	.mask{
+	.mask {
 		mask-image: url('/assets/fond-item2.png');
 		mask-size: 100%;
 		mask-repeat: no-repeat;
