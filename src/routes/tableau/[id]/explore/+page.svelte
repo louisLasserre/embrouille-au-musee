@@ -5,7 +5,7 @@
 	import Painting from 'src/components/Painting.svelte';
 	import Inventory from 'src/components/Inventory.svelte';
 	import ButtonIndice from 'src/components/ButtonIndice.svelte';
-	import { actualPaintingIndex, exploringMode, items } from '../../../../stores';
+	import { actualPaintingIndex, exploringMode, items } from 'src/stores.ts';
 	import type { PageData } from '../$types';
 	import type { IItemData } from 'src/lib/items';
 	import ExploreReactions from 'src/components/ExploreReactions.svelte';

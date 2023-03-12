@@ -39,12 +39,6 @@
 
 <div class="{widthContent} bg-background p-5">
 	<h1 class="text-center font-title text-title uppercase py-10">Crédits</h1>
-	<div class="flex flex-col">
-		<img src="/pictures/baccanight-bloc-marque-v1.png" alt="logo baccanight" class="w-48" />
-		<img src="/pictures/logo-mmi.png" alt="logo baccanight" class="w-48" />
-	</div>
-
-	<p class="text-center text-text font-text" />
 	<p class="text-text font-text pb-5">Les oeuvres choisies sont les suivantes :</p>
 	<ul>
 		{#each paintingsData as painting}
@@ -73,6 +67,10 @@
 	<div class="flex justify-center gap-6">
 		<Button url="/end">Retour</Button>
 		<Button url="/">Accueil</Button>
+	</div>
+	<div class="flex flex-col items-center pt-10">
+		<img src="/pictures/baccanight-bloc-marque-v1.png" alt="logo baccanight" class="max-w-[50%]"/>
+		<img src="/pictures/logo-mmi.png" alt="logo baccanight"  class="max-w-[50%]"/>
 	</div>
 </div>
 
