@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from 'src/components/Button.svelte';
 	import { actualPaintingIndex, exploringMode, items } from 'src/stores';
-	import { paintingsData } from 'src/lib/data.ts';
+	import { paintingsData } from 'src/lib/data';
 
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
@@ -17,17 +17,13 @@
 	let paintingName = paintingsData[$actualPaintingIndex].name;
 	let paintingDescription = paintingsData[$actualPaintingIndex].description;
 
-	let srcs = [
-			srcPainting,
-		'/assets/fond-item2.png'
-	]
-	
+	let srcs = [srcPainting, '/assets/fond-item2.png'];
 </script>
 
 <svelte:window bind:innerWidth />
 
 <svelte:head>
-	{#each	srcs as src}
+	{#each srcs as src}
 		<link rel="preload" href={src} as="image" />
 	{/each}
 </svelte:head>

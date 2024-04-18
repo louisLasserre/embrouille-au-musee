@@ -5,7 +5,7 @@
 	import type { PageData } from '../$types';
 
 	import Modal from 'src/components/Modal.svelte';
-	import { onMount } from 'svelte';
+
 	let innerWidth = 0;
 	$: isMobile = innerWidth < 768;
 	$: widthContent = isMobile ? 'w-screen' : 'w-96 mx-auto my-0';
@@ -30,11 +30,9 @@
 		isActive = true;
 		return isActive;
 	};
-
 </script>
 
-<svelte:window bind:innerWidth/>
-
+<svelte:window bind:innerWidth />
 
 <body class="h-[100vh] relative flex flex-col justify-end bg-black {widthContent}">
 	<VideoPlayer src={source} {poster} />
@@ -53,10 +51,7 @@
 					Transcription : " {transcription} "
 				</p>
 			{/if}
-			<button
-				class="underline text-background whitespace-nowrap underline mt-5"
-				on:click={() => showMore()}
-			>
+			<button class="underline text-background whitespace-nowrap mt-5" on:click={() => showMore()}>
 				{IsShowMore ? 'Fermer' : 'Transcription'}
 			</button>
 		</div>

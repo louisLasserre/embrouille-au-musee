@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { paintingsData } from '$lib/data.ts';
-	import { exploringMode } from '../stores.ts';
+	import { paintingsData } from '$lib/data';
+	import { exploringMode } from '../stores';
 
 	export let isActive: boolean = false;
-	export let PageId: number;
+	export let PageId: number = 0;
 	export let text: string | null;
 	export let title: string | null;
 
-	let src = "/icons/close.png"
+	let src = '/icons/close.png';
 </script>
 
 <svelte:head>
